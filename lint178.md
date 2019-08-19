@@ -72,4 +72,4 @@ special care
 - empty graph is corner case, because BSF must start from a node, but empty dose not have a node to start form.
 - when building a graph, first node then edge
 
-[Breadth First Search](2bfs.md)
+[Breadth First Search](2bfs.md#examples)

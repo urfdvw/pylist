@@ -82,4 +82,4 @@ special care:
 - always ask return value or return node reference
 - ```sizeOfPendingLayer``` need to be measured before the for loop
 
-[Breadth First Search](2bfs.md)
+[Breadth First Search](2bfs.md#examples)
