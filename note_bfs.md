@@ -77,6 +77,7 @@
 - On hidden Graph
     - [433. Number of Islands](lint433.md)
     - [611. Knight Shortest Path](lint611.md)
+    - [120. Word Ladder](lint120.md)
 - topology sorting
     - [615. Course Schedule](lint615.md)
     - [616. Course Schedule II](lint616.md)
