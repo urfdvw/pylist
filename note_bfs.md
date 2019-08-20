@@ -77,7 +77,8 @@
 - On hidden Graph
     - [433. Number of Islands](lint433.md)
 - topology sorting
-    - []
+    - [615. Course Schedule](lint615.md)
+    - [616. Course Schedule II](lint616.md)
 
 ## MISC
 - python 里面的 collections.deque()
