@@ -81,6 +81,7 @@
     - [615. Course Schedule](lint615.md)
     - [616. Course Schedule II](lint616.md)
     - [605. Sequence Reconstruction](lint605.md)
+    - [127. Topological Sorting](lint127.md)
 
 ## MISC
 - python 里面的 collections.deque()
