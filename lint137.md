@@ -32,8 +32,6 @@ class UndirectedGraphNode:
         self.label = x
         self.neighbors = []
 """
-
-
 class Solution:
     """
     @param: node: A undirected graph node
@@ -45,31 +43,22 @@ class Solution:
         if node is None:
             return None
             
-        # bfs traverse function
-        def bfs(node):
-            """
-            in: node: a node in the graph
-            out: list of nodes: all nodes in the graphe
-            """
-            ans = []
-            # init bfs
-            queue = collections.deque([node])
-            queued = {node.label}
-            # loop
-            while queue:
-                # current node
-                current = queue.popleft()
-                # append neighbor
-                for nei in current.neighbors:
-                    if nei.label not in queued:
-                        queue.append(nei)
-                        queued.add(nei.label)
-                # service
-                ans.append(current)
-            return ans
-            
-        # get the list of all nodes
-        oldNodes = bfs(node)
+        # bfs to find all nodes
+        oldNodes = []
+        # init bfs
+        queue = collections.deque([node])
+        queued = set(queue)
+        # loop
+        while queue:
+            # current node
+            current = queue.popleft()
+            # service
+            oldNodes.append(current)
+            # append neighbor
+            for nei in current.neighbors:
+                if nei not in queued:
+                    queue.append(nei)
+                    queued.add(nei)
         # copy nodes
         newNodes = dict()
         for n in oldNodes:
@@ -87,7 +76,7 @@ Questions to ask
 - Are the labels unique? Yes!
 
 Special care
-- class graphnode is not hashable, so not able to store in set(). So store labels.
+- This is an emample hash a object is hashing its reference. Because the old nodes are onld read not changes, append the oldNode objects are fine.
 - BFS loops are independent from service code.
 
 ---
