@@ -1,6 +1,6 @@
 # Breadth First Search
 
-## 模板
+## 模板和要點
 - On Tree
     -   ```
         # 初始化
@@ -80,6 +80,7 @@
 - topology sorting
     - [615. Course Schedule](lint615.md)
     - [616. Course Schedule II](lint616.md)
+    - [605. Sequence Reconstruction](lint605.md)
 
 ## MISC
 - python 里面的 collections.deque()

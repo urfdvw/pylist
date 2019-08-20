@@ -60,8 +60,7 @@ class Solution:
         while queue:
             # while queue is not empty
             layer = []
-            sizeOfPendingLayer = len(queue)
-            for i in range(sizeOfPendingLayer):
+            for i in range(len(queue)):
                 # for each node in current pending layer
                 node = queue.popleft()
                 # offer children if exist
@@ -80,4 +79,4 @@ class Solution:
 special care:
 - lint code always have that insane empty set
 - always ask return value or return node reference
-- ```sizeOfPendingLayer``` need to be measured before the for loop
+- ```sizeOfPendingLayer``` need not to be measured before the for loop
