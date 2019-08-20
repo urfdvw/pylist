@@ -75,7 +75,7 @@
     - [178. Graph Valid Tree](lint178.md)
     - [137. Clone Graph](lint137.md)
 - On hidden Graph
-    - 
+    - [433. Number of Islands](lint433.md)
 - topology sorting
     - []
 
