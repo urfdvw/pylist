@@ -1,7 +1,7 @@
 # Contents
-- [Breadth First Search](2bfs.md)
-- [Binary search](#Binary-search)
-- [Binary tree](#Binary-Tree)
+- [Coding Style](note_style.md)
+- [Breadth First Search](note_bfs.md)
+- [Non-Algorithm Problems](note_non_alg.md)
 
 # Binary search
 ## 0. Find target index: find any/first/last target in the list

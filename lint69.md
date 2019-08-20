@@ -81,5 +81,3 @@ special care:
 - lint code always have that insane empty set
 - always ask return value or return node reference
 - ```sizeOfPendingLayer``` need to be measured before the for loop
-
-[Breadth First Search](2bfs.md#examples)

@@ -90,8 +90,6 @@ Special care
 - class graphnode is not hashable, so not able to store in set(). So store labels.
 - BFS loops are independent from service code.
 
-[Breadth First Search](2bfs.md#examples)
-
 ---
 
 ## Archived Solution

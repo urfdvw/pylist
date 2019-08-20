@@ -110,8 +110,6 @@ questions to ask:
 special care:
 - When convert the string back to tree, need to use construction function of TreeNode class
 
-[Breadth First Search](2bfs.md#examples)
-
 ---
 
 ## Archived Solution
