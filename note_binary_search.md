@@ -1,0 +1,72 @@
+# Binary search
+
+## 模板和要點
+- Find target index: find any/first/last target in the list
+    -   ```python
+        # corner cases
+        # init boundaries
+        while(low + 1 < up):
+            # while up and low are not next to each other
+            mid = int(low + (up - low)/2)
+            if(nums[mid] == target):
+            elif(nums[mid] > target):
+            else:  # (nums[mid] < target)
+        # check wether up or low
+        # if not found
+        ```
+    - 要點
+        - 相邻即退出
+            - while(low + 1 < up):
+        - mid = (low - up)/2 + low
+        - 比较的三种情况==, >, <
+            - 全部都是 = mid
+            - 情况 ==
+                - 如果求any position，可以返回
+                - 如果求first，up = min
+                - 剩下一种你猜
+            - 情况 target < list[mid]
+                - up = mid
+            - 剩下一种你猜
+        - 判断到底返回up还是low
+            - 顺序可能有讲究
+
+- Binary search by condition: find any/first/last element in list that
+    - 要點：
+        - list的前后两半分别满足与不满足**某个条件**
+        - 找到满足和不满足**分界**的地方
+        - 判断只有两项，及满足or不满足
+        - 返回时候不用check，因为up和low的propertie不变，所以可以知道该返回哪个。
+        - 注意要返回的是index还是element，都有可能
+
+- 缩小有解范围的大小
+    - 要點：
+        - 要寻找***any***解的位置
+        - 可以通过两界的性质判区间内是否有解
+        
+- 按结果搜索
+    - 要點
+        - 题目要求的函数是一个复杂过程，let's call it backward process
+        - 但是其逆过程是一个简单过程，let's call it forward process
+        - 题目要求的函数输入输出都是scaler，且是一个单调函数。
+        - 目前猜测，这类问题都可以转换为binary search by condition问题
+        
+## Examples
+- Find target index: find any/first/last target in the list
+    - [457](lint457.md),
+    - [14](lint14.md),
+    - [458](lint458.md),
+    - [447](lint447.md)
+- Binary search by condition: find any/first/last element in list that
+    - [74](lint74.md),
+    - [159](lint159.md)
+- 缩小有解范围的大小
+    - [75](lint75.md)
+- 按结果搜索
+    - [141](lint141.md),
+    - [183](lint183.md),
+    - [437](lint437.md)
+
+## MISC
+- 如果明确要求olog(n)，一定是二分法
+- 除了明显是递归的题，能不递归就不递归
+- ["bisect" package examples](misc/bisect.md)

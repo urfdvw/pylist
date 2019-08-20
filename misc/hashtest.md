@@ -19,7 +19,6 @@ print(a.__hash__())
 In place operation does not change the hash value.
 I guess it is because the reference did not change.
 ```python
-
 a.set_val(2)
 print(a.__hash__())
 ```
