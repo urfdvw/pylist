@@ -66,5 +66,3 @@ class Solution:
         # if not found
         return -1
 ```
-
-[Binary search notes](readme.md#Binary-search)

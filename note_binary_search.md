@@ -52,10 +52,10 @@
         
 ## Examples
 - Find target index: find any/first/last target in the list
-    - [457](lint457.md),
-    - [14](lint14.md),
-    - [458](lint458.md),
-    - [447](lint447.md)
+    - [457. Classical Binary Search](lint457.md)
+    - [14. First Position of Target](lint14.md),
+    - [458. Last Position of Target](lint458.md),
+    - [447. Search in a Big Sorted Array](lint447.md)
 - Binary search by condition: find any/first/last element in list that
     - [74](lint74.md),
     - [159](lint159.md)

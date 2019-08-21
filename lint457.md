@@ -53,5 +53,3 @@ special care
 - do remember empty set case
 - because 'any', direct return when "=="
 - because 'any', order of check is not important
-
-[Binary search notes](readme.md#Binary-search)
