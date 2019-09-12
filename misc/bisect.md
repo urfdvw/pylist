@@ -53,5 +53,3 @@ class Solution:
 ## special care
 - if the target exist in the list, left-insert position is the index of found target
 - For first, use bisect_left(); for last, use bisect_right().
-
-[Bineray search notes](readme.md#Bineray-search)
