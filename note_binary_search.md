@@ -1,6 +1,6 @@
 # Binary search
 
-## 模板和要點
+## 模板和要点
 - Find target index: find any/first/last target in the list
     -   ```python
         # corner cases
