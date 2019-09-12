@@ -74,7 +74,7 @@
 - On Graph
     - [178. Graph Valid Tree](lint178.md)
     - [137. Clone Graph](lint137.md)
-- On hidden Graph
+- On Implicit Graph
     - [433. Number of Islands](lint433.md)
     - [611. Knight Shortest Path](lint611.md)
     - [120. Word Ladder](lint120.md)

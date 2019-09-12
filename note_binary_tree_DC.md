@@ -1,9 +1,7 @@
 # Binary Tree
-- 二叉树
-    - full：每个节点都有两个或者没有子节点
-    - balanced：左右子树高度差不超过1
-    - complete：先填满靠近root的层再去填下层，且每层从左往右填
-- binary tree DC 模板
+
+## 模板和要点
+binary tree DC 模板
 ```python
 def dfs(node):
     # if no such a node
@@ -21,29 +19,39 @@ def dfs(node):
 
 return dfs(root)  # dfs(root)[0]
 ```
-- 模板关键点
-    - 遍历的是增广二叉树而不是二叉树本身，就是说所有的None都曾作为函数输入
-    - Divide conquer, is recusion
-        - 递归函数的定义
-        - 递归的body
-        - 出口
-    - 然而返回条件有两种
-        - 遇到叶节点
-        - 遇到增广二叉树的边缘None
+要点
+- 遍历的是增广二叉树而不是二叉树本身，就是说所有的None都曾作为函数输入
+- Divide conquer, is recusion
+    - 递归函数的定义
+    - 递归的body
+    - 出口
+- 然而返回条件有两种
+    - 遇到叶节点
+    - 遇到增广二叉树的边缘None
 
-- examples
-[97](lint97.md),
-[480](lint480.md),
-[596](lint596.md),
-[93](lint93.md),
-[597](lint597.md),
-[453](lint453.md),
-[88](lint88.md),
-[595](lint595.md),
-[614](lint614.md),
-[95](lint95.md),
+## Examples
+- [97](lint97.md)
+- [480](lint480.md)
+- [596](lint596.md)
+- [93](lint93.md)
+- [597](lint597.md)
+- [453](lint453.md)
+- [88](lint88.md)
+- [595](lint595.md)
+- [614](lint614.md)
+- [95](lint95.md)
+- 900
+- 902
+- 578
+- 95
+- 901
+- 86
 
 ## MISC
+- 二叉树定义
+    - full：每个节点都有两个或者没有子节点
+    - balanced：左右子树高度差不超过1
+    - complete：先填满靠近root的层再去填下层，且每层从左往右填
 - pre-, in-, postorder 都是 DFS
 - dfs函数最好还是单独写一个函数
     - 原因一是因为返回值多的时候总是要单独写的，所以就统一单独写不多想了
