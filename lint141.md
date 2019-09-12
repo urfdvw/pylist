@@ -69,8 +69,6 @@ special care:
 because low will always satisfy ```low * low <= x```,
 no matter it is the solution or not.
 
-[Binary search notes](readme.md#Binary-search)
-
 ---
 
 ## Archived solution

@@ -29,12 +29,6 @@ class Solution:
     @return: the minimum number in the array
     """
     def findMin(self, nums):
-        # questions to ask:
-        ## Q: what if all same numbers such as [1, 1, 1, 1, 1]?
-        ## A: no duplicated so no such case.
-        ## Q: what to return if empty array?
-        ## A: 
-        
         # corner cases
         ## only one element:
         if len(nums) == 1:
@@ -59,7 +53,11 @@ class Solution:
         ## first after the boundary
         return nums[up]  # return the element, not the index
 ```
+questions:
+- Q: what if all same numbers such as [1, 1, 1, 1, 1]?
+    - A: no duplicated so no such case.
+- Q: what to return if empty array?
+    - A: no such case
+        
 special care
 - return the element not the index
-
-[Binary search notes](readme.md#Binary-search)

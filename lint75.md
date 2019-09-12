@@ -34,9 +34,6 @@ class Solution:
     @return: return any of peek positions.
     """
     def findPeak(self, A):
-        # questions to ask
-        ## Can I assume that the minimum length of the list is 3? Yes!
-        
         # corner cases
         
         # bisection init
@@ -60,7 +57,9 @@ class Solution:
         else:
             return low
 ```
+
+questions to ask
+- Can I assume that the minimum length of the list is 3? Yes!
+        
 Special care:
 - because len(A) >= 3 always true, no corner case input
-
-[Binary search notes](readme.md#Binary-search)

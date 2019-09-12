@@ -35,26 +35,6 @@ class Solution:
         in: k: int: number of workers
         out: l: int: shortest time that the slowest copier spends. (total time)
         """
-
-        def NoOfWorkerNeeded(pages,l):    
-            """
-            in: pages: int list: same as pages discribed
-            in: l: int: total time
-            out: k: int: minimum number of workers needed
-            """
-            accu = 0  # workload accumulater per person
-            k = 1  # worker number accumulater
-            # k start from one because we need a current worker
-            for a in pages:
-                if accu + a > l:
-                    # if one more book is to much for the current worker
-                    k += 1  # get another worker
-                    accu = a  # and this book belong to the new worker
-                else:
-                    # if still holdable
-                    accu += a  # this book belong to the current worker
-            return k    
-
         # corner cases
         if not pages:
             # if empty set, S***, why there is empty set?
@@ -67,7 +47,7 @@ class Solution:
         ## shortest time, that means con(up) should be true
         ## big $l$ means smaller $k$, NoOfWorkerNeeded(pages,up) should be small
         ## "There are k persons" can be seen as "There are at most k persons"
-        def con(l): return NoOfWorkerNeeded(pages,l) <= k
+        def con(l): return self.NoOfWorkerNeeded(pages,l) <= k
 
         # binary search for the smallest l given a desired k
         ## largest possible l is when 1 guy copys all the books
@@ -83,6 +63,25 @@ class Solution:
                 low = mid
         # return the shortest time
         return up
+
+    def NoOfWorkerNeeded(self, pages,l):    
+        """
+        in: pages: int list: same as pages discribed
+        in: l: int: total time
+        out: k: int: minimum number of workers needed
+        """
+        accu = 0  # workload accumulater per person
+        k = 1  # worker number accumulater
+        # k start from one because we need a current worker
+        for a in pages:
+            if accu + a > l:
+                # if one more book is to much for the current worker
+                k += 1  # get another worker
+                accu = a  # and this book belong to the new worker
+            else:
+                # if still holdable
+                accu += a  # this book belong to the current worker
+        return k    
 ```
 
 special care
@@ -94,8 +93,6 @@ special care
     - ">=" or "<=", or others
     - con(up) == true or con(low) == true
         - this can be inferred from the question such as "return the largest ...", largest means con(low) == true
-
-[Binary search notes](readme.md#Binary-search)
 
 ---
 

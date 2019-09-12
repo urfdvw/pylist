@@ -83,8 +83,6 @@ special care:
 - for better read flow, define the help function as another class method.
 - it is worthy to spend more time on the corner cases and also up and low bounds.
 
-[Binary search notes](readme.md#Binary-search)
-
 ---
 
 ## Archived solution

@@ -33,12 +33,7 @@ class Solution:
     @param n: An integer
     @return: An integer which is the first bad version.
     """
-    def findFirstBadVersion(self, n):
-        # check out questions:
-        ## is n>1 always true? Yes!
-        ## is there always a bad version? Yes!
-        ## is there always a good version? No!
-        
+    def findFirstBadVersion(self, n):        
         # corner cases
         ## no corner case for special "n"
         ## if no good versions
@@ -64,10 +59,14 @@ class Solution:
         # if not found
         ## if bad version exists, no not found case
 ```
+
+questions:
+- is n>1 always true? Yes!
+- is there always a bad version? Yes!
+- is there always a good version? No!
+
 special care
 - let's call 'good' and 'bad' properties
 - corner cases are uniform properties: all good or all bad
 - because there are only 2 properties, only 2 cases of comparison, keep the properties of *up* and *low*, instead of ">, <, =="
 - return does not need check, use the property 
-
-[Binary search notes](readme.md#Binary-search)
