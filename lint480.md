@@ -38,34 +38,37 @@ class Solution:
     @return: all root-to-leaf paths
     """
     def binaryTreePaths(self, root):
-        def dfs(node):
-            """
-            in: node: TreeNode
-            out: paths: list of list of values, each sublist is a path
-            """
-            # if no such a node:
-            if node is None:
-                return []
-            # return condition
-            if node.left is None and node.right is None:
-                return [[str(node.val)]]
-            # get answers
-            pathsLeft = dfs(node.left)
-            pathsRight = dfs(node.right)
-            # conbine answers
-            paths = []
-            paths.extend(pathsLeft)
-            paths.extend(pathsRight)
-            [p.insert(0, str(node.val)) for p in paths]
-            # return conbined answer
-            return paths
             
         # call recursion
-        paths = dfs(root)
-        pathswords = ['->'.join(l) for l in paths]
+        paths = self.dfs(root)
+        pathswords = ['->'.join(l[::-1]) for l in paths]
         return pathswords
+        
+    def dfs(self, node):
+        """
+        in: node: TreeNode
+        out: paths: list of list of values, each sublist is a path
+        """
+        # if no such a node:
+        if node is None:
+            return []
+        # return condition
+        if node.left is None and node.right is None:
+            return [[str(node.val)]]
+        # get answers
+        pathsLeft = self.dfs(node.left)
+        pathsRight = self.dfs(node.right)
+        # conbine answers
+        paths = []
+        paths.extend(pathsLeft)
+        paths.extend(pathsRight)
+        [p.append(str(node.val)) for p in paths]
+        # return conbined answer
+        return paths
 ```
 special care
 - ```A.insert()``` and ```A.extend()``` do not have return value
-
-[Binary tree notes](readme.md#Binary-Tree)
+- But ```insert(0, )``` is a bad practice. I would rather reverse the list while using the accumulated list
+    - ```pathswords = ['->'.join(l[::-1]) for l in paths]``` 
+    - and ```p.append(str(node.val))```
+    - instead of ```p.insert(0, str(node.val))```

@@ -30,9 +30,9 @@ return dfs(root)  # dfs(root)[0]
     - 遇到增广二叉树的边缘None
 
 ## Examples
-- [97](lint97.md)
-- [480](lint480.md)
-- [596](lint596.md)
+- [97. Maximum Depth of Binary Tree](lint97.md)
+- [480. Binary Tree Paths](lint480.md)
+- [596. Minimum Subtree](lint596.md)
 - [93](lint93.md)
 - [597](lint597.md)
 - [453](lint453.md)

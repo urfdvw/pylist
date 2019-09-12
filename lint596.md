@@ -40,37 +40,37 @@ class Solution:
     @return: the root of the minimum subtree
     """
     def findSubtree(self, root):
-        def dfs(node):
-            """
-            in: node: node: root of subtree
-            out: accu: int: sum of the subtree
-            out: minsum: int: min sum of the subtree
-            out: minnode: node: root of subtree that have minsum
-            """
-            # if no such node
-            if node is None:
-                return 0, float("inf"), None
-            # if leaf
-            if node.left is None and node.right is None:
-                return node.val, node.val, node
-            # find results
-            accul, minsuml, minnodel = dfs(node.left)
-            accur, minsumr, minnoder = dfs(node.right)
-            # combine results
-            accu = accul + accur + node.val
-            minsum = min([minsuml, minsumr, accu])
-            if minsum == minsuml:
-                minnode = minnodel
-            elif minsum == minsumr:
-                minnode = minnoder
-            else:
-                minnode = node
-            # return combined answer
-            return accu, minsum, minnode
-        return dfs(root)[2]  # only minnode is needed
+        return self.dfs(root)[0]  # only minnode is needed
+        
+    def dfs(self, node):
+        """
+        in: node: node: root of subtree
+        out: accu: int: sum of the subtree
+        out: minsum: int: min sum of the subtree
+        out: minnode: node: root of subtree that have minsum
+        """
+        # if no such node
+        if node is None:
+            return None, float("inf"), 0
+        # if leaf
+        if node.left is None and node.right is None:
+            return node, node.val, node.val
+        # find results
+        minnodel, minsuml, accul = self.dfs(node.left)
+        minnoder, minsumr, accur = self.dfs(node.right)
+        # combine results
+        accu = accul + accur + node.val
+        minsum = min([minsuml, minsumr, accu])
+        if minsum == minsuml:
+            minnode = minnodel
+        elif minsum == minsumr:
+            minnode = minnoder
+        else:
+            minnode = node
+        # return combined answer
+        return minnode, minsum, accu
 ```
 
 special care:
 - ```float("inf")``` is how you define the largest float number
-
-[Binary tree notes](readme.md#Binary-Tree)
+    - there is no counterpart of ```int```

@@ -38,24 +38,26 @@ class Solution:
     @return: An integer
     """
     def maxDepth(self, root):
-        def dfs(node):
-            # if no such node
-            if node is None:
-                return 0
-            # if leaf, this section can be removed
-            if node.left is None and node.right is None:
-                return 1
-            # get answers from left and right
-            depthLeft = dfs(node.left)
-            depthRight = dfs(node.right)
-            # combine answers
-            depth = max([depthLeft, depthRight]) + 1
-            # return combined answer
-            return depth
-        return dfs(root)
+        return self.dfs(root)
+        
+    def dfs(self, node):
+        # if no such node
+        if node is None:
+            return 0
+        # if leaf
+        ## this section is not nesessary,
+        ## but because this problem is too special
+        ## I keep it to fit the template
+        if node.left is None and node.right is None:
+            return 1
+        # get answers from left and right
+        depthLeft = self.dfs(node.left)
+        depthRight = self.dfs(node.right)
+        # combine answers
+        depth = max([depthLeft, depthRight]) + 1
+        # return combined answer
+        return depth
 ```
 special care
-- this section is not nesessary, but because this problem is too special. I keep it to fit the 模板.
+- this section is not nesessary, but because this problem is too special. I keep it to fit the template.
 - empty tree have 0 layer, and leaf have 1 layer.
-
-[Binary tree notes](readme.md#Binary-Tree)
