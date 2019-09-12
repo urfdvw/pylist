@@ -56,19 +56,18 @@
     - [14. First Position of Target](lint14.md),
     - [458. Last Position of Target](lint458.md),
     - [447. Search in a Big Sorted Array](lint447.md)
+    - [460. Find K Closest Elements](lint460.md)
 - Binary search by condition: find any/first/last element in list that
     - [74. First Bad Version](lint74.md),
     - [159. Find Minimum in Rotated Sorted Array](lint159.md)
     - [585. Maximum Number in Mountain Sequence](lint585.md)
 - 缩小有解范围的大小
     - [75. Find Peak Element](lint75.md)
+    - [62. Search in Rotated Sorted Array](lint62.md)
 - 按结果搜索
     - [141. Sqrt(x)](lint141.md),
     - [183. Wood Cut](lint183.md),
     - [437. Copy Books](lint437.md)
-
-    460
-    62
 
 ## MISC
 - 如果明确要求olog(n)，一定是二分法

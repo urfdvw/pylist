@@ -65,5 +65,3 @@ class Solution:
 Special care:
 - When compare elements in A, use ">" or "<", because no duplication
 - When compare target with elements in A, use ">=" or "<="
-
-[Binary search notes](readme.md#Binary-search)
