@@ -61,10 +61,10 @@
 ## Examples
 - 0/1 背包问题
     - [92. Backpack](lint92.md)
-    - 1538
-    - 800
-    - 563
-    - 125
+    - [125. Backpack II](lint125.md)
+    - [563. Backpack V](lint563.md)
+    - [800. Backpack IX](lint800.md)
+    - [1538. Card Game II](lint1538.md)
 - 无限背包问题
     - 749
     - 801
