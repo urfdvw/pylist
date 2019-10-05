@@ -2,13 +2,44 @@
 
 ## 模板和要点
 - 问题特征
-    - 包容量
+    - 包容量是整数
     - 物品占用的容量
-    - 物品价值
-    - 求包能容下的最大价值
-- 0-1 背包问题
-    - 有限个物体可以放入一次或者不放入
-    - 动态规划模板
+    - 所问的问题是符合交换律和结合律的运算如：
+        - 求方案数
+        - 求和、积
+        - 求最值
+        - 求可行性（and or）
+        - 以上运算的组合
+        - 其他一些well defined的数学运算也有可能
+- 核心思想
+    - 问题的递归，两个维度
+        - 背包大小的递归，大包问题的答案依赖较小包的问题的答案
+        - 考虑到物件的递归，考虑了较多物件的问题的答案依赖考虑了较少物件的问题的答案
+- 0-1 背包问题：有限个物体可以放入一次或者不放入
+    - 通用模板
+        - backqestion:
+            - ask for ```fun(N, X)``` where
+            - ```fun``` is the question asked
+            - ```N``` is the number of items
+            - ```X``` is the size of backpack
+        - states：
+            - ```dp[i][y]``` is the solution of the question ```fun(i, y)``` with
+            - the first ```i``` items considered and
+            - backpack size ```y```
+            - ```i``` from 0 to N, N+1 total
+            - ```y``` from 0 to X, X+1 total
+        - process
+            - init ```dp[0]``` the first row
+            - ```for i in range(1, N+1):```
+                - ```for y in range(X+1):```
+                    - ```if y < size[i-1]:``` if backpack size not enough for the new considered item
+                        - ```dp[i][y] = dp[i-1][y]``` keep the answer from the last problem
+                    - ```else:``` if backpack size big enough
+                        - merge the answer based on the question for the answers:
+                            - ```dp[i-1][y]``` if not put in
+                            - ```dp[i-1][y-size[i-1]] + value[i-1]``` if put in new item
+            - return ```dp[N][X]``` or ```dp[-1][-1]```
+    - 价值问题模板
         - 状态定义：我们将在总重量不超过Y的前提下，前j种物品的总价格所能达到的最高值定义为```A(j, Y)```。
         - ```A(j, Y)```的递推关系为：
             - ```A(0, Y) = 0```
@@ -18,14 +49,22 @@
             - 如果```wj ≤ Y```, ```A(j, Y) = max { A(j - 1, Y), pj + A(j - 1, Y - wj)}```
                 - ```A(j - 1, Y)``` *尝试不放入新的物品，那就和没这个物品的问题同解*
                 - ```pj + A(j - 1, Y - wj)``` *尝试放入新的物品，剩下的空间放入之前的物品。* ```Y - wj``` *是剩下的空间。*
-
+- 无限背包问题：每个物体可以使用无限次
+    - 和0/1的唯一差别在于，需要merge的两个题解分别是
+        - ```dp[i-1][y]``` if not put in
+        - ```dp[i][y-size[i-1]] + value[i-1]``` if put in new item
+        - difference is the 2nd one is from the same line
+- 优化方法
+    - 滚动数组
+    - 物体大小变成其最大公约数的倍数
+    - *其他的方法也有但是意义不大*
 ## Examples
 - 0/1 背包问题
+    - [92. Backpack](lint92.md)
     - 1538
     - 800
     - 563
     - 125
-    - 92
 - 无限背包问题
     - 749
     - 801
