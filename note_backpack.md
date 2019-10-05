@@ -66,12 +66,15 @@
     - [800. Backpack IX](lint800.md)
     - [1538. Card Game II](lint1538.md)
 - 无限背包问题
-    - 749
-    - 801
-    - 700
-    - 669
-    - 562
-    - 440
+    - [440. Backpack III](lint440.md)
+    - [562. Backpack IV](lint562.md)
+    - [669. Coin Change](lint669.md)
+    - [700. Cutting a Rod](lint700.md)
+    - [749. John's backyard garden](lint749.md)
+    - [801. Backpack X](lint801.md)
 - 有限背包问题
     - 799
     - 798
+
+## MISC
+- [背包问题9讲](https://www.kancloud.cn/kancloud/pack/70127)
