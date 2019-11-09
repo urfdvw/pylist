@@ -79,5 +79,4 @@
 ## MISC
 - [背包问题9讲](https://www.kancloud.cn/kancloud/pack/70127)
 - 某刷題小組的討論
-    - [slides](misc/backpack_slides.pdf)
-    - [錄像](https://youtu.be/TidbiXobWOk)
+    - [slides](misc/backpack_slides.pdf) [](https://youtu.be/TidbiXobWOk)
