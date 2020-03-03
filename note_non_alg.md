@@ -5,5 +5,5 @@
 - [627. Longest Palindrome](lint627.md)
 
 ## Binary number for searching
-    428
+- [428. Pow(x, n)](lint428.md)
     140
