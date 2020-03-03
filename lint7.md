@@ -109,6 +109,7 @@ questions to ask:
 
 special care:
 - When convert the string back to tree, need to use construction function of TreeNode class
+- 这里为了避免左右的代码重复，要loop through attributes，不得不使用`setattr`和`getattr`不多见，但是这里是必须的。
 
 ---
 

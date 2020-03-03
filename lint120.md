@@ -79,5 +79,15 @@ class Solution:
         return neighbors
 ```
 
-Special care:
-```start``` and ```end``` might not in the voc. This corner case is so stupid.
+# Special care
+- `start` and `end` might not in the voc. This corner case is so stupid.
+- 选择一个找邻居的算法，词库大小N，字母表大小M，词长L
+    1. 两两对比
+        - 对比两词的时间复杂度O(L)
+        - 两两循环的时间复杂度O(N^2)
+        - 总计O(LN^2)
+    2. 判断可能的词在不在词汇表里
+        - 一个单词可能的词的数目 O(ML)
+        - 一次查找词库的速度O(L)
+        - 总计O(NML^2)
+    - 结论: LN^2 > NML^2 -> N > ML 时 第二种方法更快

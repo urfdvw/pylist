@@ -76,7 +76,7 @@ Questions to ask
 - Are the labels unique? Yes!
 
 Special care
-- This is an emample hash a object is hashing its reference. Because the old nodes are onld read not changes, append the oldNode objects are fine.
+- This is an example hash a object is hashing its reference. Because the old nodes are only read not changes, append the oldNode objects to a set() is fine.
 - BFS loops are independent from service code.
 
 ---

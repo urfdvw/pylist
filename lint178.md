@@ -44,12 +44,9 @@ class Solution:
         for e in edges:
             graph[e[0]].add(e[1])
             graph[e[1]].add(e[0])
-        ## init bsf by putting 0 in queue
-        if 0 not in graph:
-            # if 0 not connected to any node, not fully connected
-            return False
-        queue = collections.deque([0])
-        queued = {0}
+        ## init bsf by putting first node in the queue
+        queue = collections.deque([edges[0][0]])
+        queued = set(queue)
         ## BFS loop
         while queue:
             # current node

@@ -127,3 +127,4 @@ class Solution:
 ```
 Special care:
 - 這是一個很明顯的隱式圖不能add對象to qeueued的例子，better way is just work with tuple with out touching the objects.
+- 关于记层数的问题，可以看出发点被记为什么。这里出发点就是没动，就是0步。有些题出发点是第1层。

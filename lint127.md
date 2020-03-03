@@ -68,8 +68,8 @@ class Solution:
             return []
 ```
           
-Question to ask
+# Question to ask
 - what if not DAG? I guess return []
 - are labels unique? I guess unique
-Special care:
+# Special care:
 - Check the length of tp_sot, if not the same as number of nodes, means not DAG, then return []

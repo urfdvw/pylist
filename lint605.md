@@ -87,7 +87,7 @@ class Solution:
         return True
 ```
         
-Question to ask: 
+# Question to ask
 - can i assume that the numbers are unique? Yes!
 Special care:
 - Need to check at the end
