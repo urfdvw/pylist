@@ -91,5 +91,3 @@ class Solution:
         """
         return self.dfs(root)[0]
 ```
-
-[Binary tree notes](readme.md#Binary-Tree)

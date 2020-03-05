@@ -98,5 +98,3 @@ class Solution:
 
 special care
 - 因为在这个例子中，增广二叉树的边缘并不能参与运算，所以就用None代表特例。在使用时候，先用 ```if A is not None```来判断是否碰到了增广二叉树边缘，如果是边缘，则忽略不做操作。
-
-[Binary tree notes](readme.md#Binary-Tree)
