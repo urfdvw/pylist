@@ -49,10 +49,10 @@ return dfs(root)  # dfs(root)[0]
     - [453. Flatten Binary Tree to Linked List](lint453.md)
     - [93. Balanced Binary Tree](lint93.md)
     - [578. Lowest Common Ancestor III](lint578.md)
-    - [95](lint95.md)
 - Binary Search Tree
     - [900. Closest Binary Search Tree Value](lint900.md)
     - [902. Kth Smallest Element in a BST](lint902.md)
+    - [95. Validate Binary Search Tree](lint95.md)
 
 
 ## MISC

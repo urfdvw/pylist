@@ -82,5 +82,3 @@ class Solution:
 special care:
 - BST is not guaranteed full
 - definition of BST might differ
-
-[Binary tree notes](readme.md#Binary-Tree)
