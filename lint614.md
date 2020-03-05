@@ -116,5 +116,3 @@ special care:
 - 善用max()来update答案
 - 少用if-else多用if，使判断为二元判断而不是多元判断
 - 每一个返回值用一段独立的代码进行combine，从原材料开始combine，最后update真返回值
-
-[Binary tree notes](readme.md#Binary-Tree)

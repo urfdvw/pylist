@@ -82,5 +82,3 @@ class Solution:
 special care
 - the least number of counting is ```0```, no need to have the default as ```-float('inf')```.
 - for syntax, be care for '-th', ':', '=='
-
-[Binary tree notes](readme.md#Binary-Tree)

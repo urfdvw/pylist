@@ -34,25 +34,25 @@ return dfs(root)  # dfs(root)[0]
     - 比如返回dfs(root)[0]的话，一定是[0]的计算依靠[1],[1]的计算依靠[2]，以此类推。
 
 ## Examples
-- [97. Maximum Depth of Binary Tree](lint97.md)
-- [597](lint597.md)
-- [88](lint88.md)
-- [595](lint595.md)
-- [614](lint614.md)
-- 95
-- 901
-- 86
 
 - Binary Tree
+    - [97. Maximum Depth of Binary Tree](lint97.md)
     - [596. Minimum Subtree](lint596.md)
+    - [597. Subtree with Maximum Average](lint597.md)
     - [480. Binary Tree Paths](lint480.md)
     - [453. Flatten Binary Tree to Linked List](lint453.md)
     - [93. Balanced Binary Tree](lint93.md)
+    - [88. Lowest Common Ancestor of a Binary Tree](lint88.md)
     - [578. Lowest Common Ancestor III](lint578.md)
+    - [595. Binary Tree Longest Consecutive Sequence](lint595.md)
+    - [614. Binary Tree Longest Consecutive Sequence II](lint614.md)
 - Binary Search Tree
     - [900. Closest Binary Search Tree Value](lint900.md)
     - [902. Kth Smallest Element in a BST](lint902.md)
     - [95. Validate Binary Search Tree](lint95.md)
+    - 901
+- non-recursion
+    - 86
 
 
 ## MISC

@@ -96,5 +96,3 @@ class Solution:
 special care
 - once the answer is found, there is no need for any calculation.
 So the first step in 'combine answers' is check if answer is already found
-
-[Binary tree notes](readme.md#Binary-Tree)
