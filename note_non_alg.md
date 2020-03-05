@@ -8,4 +8,4 @@
 
 ## Binary number for searching
 - [428. Pow(x, n)](lint428.md)
-- [140. Fast Power](lint140.md)
+- [140. Fast Power](lint140.md), with residule theorem

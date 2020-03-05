@@ -3,7 +3,7 @@
 ## 模板和要点
 binary tree DC 模板
 ```python
-def dfs(node):
+def dfs(node, size):
     # if no such a node
     if node is None:
         # 目的一，default for empty tree
@@ -13,6 +13,8 @@ def dfs(node):
         # 递归逻辑的真正出口
         # 只有leaf的树的返回值。【依此思考】
     # acquire answers
+    left_ans = dfs(node.left, size-1)
+    right...
     # conbine answers
     # return conbined answer
     return Ans
@@ -28,6 +30,8 @@ return dfs(root)  # dfs(root)[0]
 - 然而返回条件有两种
     - 遇到叶节点
     - 遇到增广二叉树的边缘None
+- ans一般不止一个，相互之间是依赖关系
+    - 比如返回dfs(root)[0]的话，一定是[0]的计算依靠[1],[1]的计算依靠[2]，以此类推。
 
 ## Examples
 - [97. Maximum Depth of Binary Tree](lint97.md)
@@ -40,12 +44,14 @@ return dfs(root)  # dfs(root)[0]
 - [595](lint595.md)
 - [614](lint614.md)
 - [95](lint95.md)
-- 900
 - 902
 - 578
 - 95
 - 901
 - 86
+- Binary Search Tree
+    - [900. Closest Binary Search Tree Value](lint900.md)
+
 
 ## MISC
 - 二叉树定义
