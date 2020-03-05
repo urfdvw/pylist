@@ -39,8 +39,6 @@ return dfs(root)  # dfs(root)[0]
 - [88](lint88.md)
 - [595](lint595.md)
 - [614](lint614.md)
-- [95](lint95.md)
-- 578
 - 95
 - 901
 - 86
@@ -50,6 +48,8 @@ return dfs(root)  # dfs(root)[0]
     - [480. Binary Tree Paths](lint480.md)
     - [453. Flatten Binary Tree to Linked List](lint453.md)
     - [93. Balanced Binary Tree](lint93.md)
+    - [578. Lowest Common Ancestor III](lint578.md)
+    - [95](lint95.md)
 - Binary Search Tree
     - [900. Closest Binary Search Tree Value](lint900.md)
     - [902. Kth Smallest Element in a BST](lint902.md)
