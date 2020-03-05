@@ -59,10 +59,9 @@ class Solution:
         pathsLeft = self.dfs(node.left)
         pathsRight = self.dfs(node.right)
         # conbine answers
-        paths = []
-        paths.extend(pathsLeft)
-        paths.extend(pathsRight)
-        [p.append(str(node.val)) for p in paths]
+        paths = pathsLeft + pathsRight
+        for p in paths:
+            p.append(str(node.val)) 
         # return conbined answer
         return paths
 ```
@@ -72,3 +71,5 @@ special care
     - ```pathswords = ['->'.join(l[::-1]) for l in paths]``` 
     - and ```p.append(str(node.val))```
     - instead of ```p.insert(0, str(node.val))```
+- 如果不是为了得到一个list就别用list comprehension
+- [for循环对和inplace 操作](misc/For and List and inplace operation.ipynb)

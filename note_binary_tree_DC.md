@@ -35,8 +35,6 @@ return dfs(root)  # dfs(root)[0]
 
 ## Examples
 - [97. Maximum Depth of Binary Tree](lint97.md)
-- [480. Binary Tree Paths](lint480.md)
-- [596. Minimum Subtree](lint596.md)
 - [93](lint93.md)
 - [597](lint597.md)
 - [453](lint453.md)
@@ -49,6 +47,10 @@ return dfs(root)  # dfs(root)[0]
 - 95
 - 901
 - 86
+
+- Binary Tree
+    - [596. Minimum Subtree](lint596.md)
+    - [480. Binary Tree Paths](lint480.md)
 - Binary Search Tree
     - [900. Closest Binary Search Tree Value](lint900.md)
 
