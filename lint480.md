@@ -72,4 +72,4 @@ special care
     - and ```p.append(str(node.val))```
     - instead of ```p.insert(0, str(node.val))```
 - 如果不是为了得到一个list就别用list comprehension
-- [for循环对和inplace 操作](misc/For and List and inplace operation.ipynb)
+- [for循环对和inplace 操作](misc/for_list_inplace.ipynb)
