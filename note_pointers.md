@@ -4,6 +4,7 @@
 - 快慢指针
     - [228. Middle of Linked List](lint228.md)
     - [539. Move Zeroes](lint539.md)
+    - [521. Remove Duplicate Numbers in Array](lint521.md)
 - 主从指针
     - [13. Implement strStr()](lint13.md)
     - [200. Longest Palindromic Substring](lint200.md)，也是背向，但不是背向双指针
