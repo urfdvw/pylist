@@ -33,6 +33,9 @@ return dfs(root)  # dfs(root)[0]
 - ans一般不止一个，相互之间是依赖关系
     - 比如返回dfs(root)[0]的话，一定是[0]的计算依靠[1],[1]的计算依靠[2]，以此类推。
 
+非递归的模板。非递归的DFS是用有限状态机来实现的。二叉树的话一共有4种状态。无论是pre/in/post-order，逻辑是完全一样的，只有顺序差别。
+[详情请看这个notebook](misc/fsa_dsf.ipynb)
+
 ## Examples
 
 - Binary Tree
@@ -50,9 +53,9 @@ return dfs(root)  # dfs(root)[0]
     - [900. Closest Binary Search Tree Value](lint900.md)
     - [902. Kth Smallest Element in a BST](lint902.md)
     - [95. Validate Binary Search Tree](lint95.md)
-    - 901
 - non-recursion
     - 86
+    - 901
 
 
 ## MISC
