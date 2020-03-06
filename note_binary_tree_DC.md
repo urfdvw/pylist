@@ -54,7 +54,7 @@ return dfs(root)  # dfs(root)[0]
     - [902. Kth Smallest Element in a BST](lint902.md)
     - [95. Validate Binary Search Tree](lint95.md)
 - non-recursion
-    - 86
+    - [86. Binary Search Tree Iterator](lint86.md)
     - 901
 
 
