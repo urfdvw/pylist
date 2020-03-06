@@ -4,6 +4,8 @@
 - 主从指针
     - [13. Implement strStr()](lint13.md)
     - [200. Longest Palindromic Substring](lint200.md)，也是背向，但不是背向双指针
+- 快慢指针
+    - [228. Middle of Linked List](lint228.md)
 - 对向双指针
     - [415. Valid Palindrome](lint415.md)
 - 背向双指针
