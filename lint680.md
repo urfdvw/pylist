@@ -55,6 +55,7 @@ class Solution:
     def traverse(self, s, cur, ans):
         if len(s) == 0:
             ans.append(cur[:])
+            return
             
         for i in [1, 2]:
             # last i should be len(s)

@@ -44,13 +44,14 @@ def question(self, s):
 def traverse(scope, cur, ans):
     if complete:
         ans.append(deep_copy(cur))
+        return
 
     for step in step_candidates:
         if possible(step):
             cur.append(step)
             self.traverse(scope - step, cur, ans)
             cur.pop()
-    # no return
+    return
 ```
 
 
