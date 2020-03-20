@@ -53,8 +53,18 @@ def traverse(scope, cur, ans):
     # no return
 ```
 
-## Examples
-- [680. Split String](lint680.md)
 
+## 循环的思路
+严格意义上这个算不上是DFS，不过可以解决少部分的DFS的题目。这些题目的特征如下：
+- 是一个寻找全部答案的题目
+- 最终答案是多个大小相等的元素构成的
+- 每个元素有几个选项，所有选项之间相互不干涉
+
+## Examples of DC and Traverse
+- DC, Traverse
+    - [680. Split String](lint680.md)
+- DC, Traverse, Iteration
+    - 17
+    - [425. Letter Combinations of a Phone Number](lint425.md)
 ## MISC
 - DC 比 Traverse 花费的空间大，因为answer list作为return在函数之间传递。所以DC也慢。
