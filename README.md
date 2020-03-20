@@ -4,6 +4,7 @@
 - [Binary Tree and DC](note_binary_tree_DC.md)
 - [Pointers](note_pointers.md)
 - [Hashmap](note_dict.md)
+- [General DFS for finding all answers](note_DFS.md)
 - [Backpack](note_backpack.md)
 # MISC
 - [Coding Style](note_style.md)
