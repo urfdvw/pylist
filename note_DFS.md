@@ -64,8 +64,9 @@ def traverse(scope, cur, ans):
 ## Examples of DC and Traverse
 - DC, Traverse
     - [680. Split String](lint680.md)
+    - [135, 153. Combination Sum](lint153.md)
 - DC, Traverse, Iteration
     - 17
     - [425. Letter Combinations of a Phone Number](lint425.md)
 ## MISC
-- DC 比 Traverse 花费的空间大，因为answer list作为return在函数之间传递。所以DC也慢。
+- DC 需要LRU catch，而traverse不需要，因为根本没有return
