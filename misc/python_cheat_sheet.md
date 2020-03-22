@@ -151,7 +151,7 @@ from collections import deque
 from heapq import heappush, heappop
 h = []
 heappush(h, 1)
-print(heappop())
+print(heappop(h))
 ```
 
 # 常用技巧
@@ -166,6 +166,13 @@ else:
     # Didn't find anything..
     not_found_in_container()
 ```
+
+# Sort table
+List 是可以按元素直接比较的，左边的权重高。
+所以List of List 是可以直接sort的。
+也可以取最值。
+也可以heap。
+[详情](sort_table.ipynb)
 
 # 注意事项
 - `//` do floor operation to get the int number
