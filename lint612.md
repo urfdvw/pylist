@@ -1,4 +1,4 @@
-#[612. K Closest Points](https://www.lintcode.com/problem/k-closest-points/description)
+# [612. K Closest Points](https://www.lintcode.com/problem/k-closest-points/description)
 
 Given some points and an origin point in two-dimensional space, find k points which are nearest to the origin.
 Return these points sorted by distance, if they are same in distance, sorted by the x-axis, and if they are same in the x-axis, sorted by y-axis.
