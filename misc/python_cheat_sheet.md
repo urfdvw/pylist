@@ -172,7 +172,12 @@ List 是可以按元素直接比较的，左边的权重高。
 所以List of List 是可以直接sort的。
 也可以取最值。
 也可以heap。
+
 [详情](sort_table.ipynb)
+
+Example
+- 209
+- 612
 
 # 注意事项
 - `//` do floor operation to get the int number
