@@ -14,3 +14,7 @@
 ## heap
 - [612. K Closest Points](lint612.md)
 - 544
+
+# 高级数据结构
+- Random access linked list: Linked-list + dictionary
+    - [134. LRU Cache](lint134.md)

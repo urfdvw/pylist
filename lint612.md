@@ -38,13 +38,7 @@ class Solution:
                 heappush(h, [-d, -p.x, -p.y, i, p])
                 continue
             flag = False
-            if -d > h[0][0]:
-                flag = True
-            if -d == h[0][0] and -p.x > h[0][1]:
-                flag = True
-            if -d == h[0][0] and -p.x == h[0][1] and -p.y > h[0][2]:
-                flag = True
-            if flag:
+            if [-d, -p.x, -p.y] > h[0][0:3]:
                 heappop(h)
                 heappush(h, [-d, -p.x, -p.y, i, p])
         ans = []
@@ -68,6 +62,21 @@ class Solution:
     - 而且在比较heaptop和新点的时候也要考虑。
         - 距离相等的话比较 x
         - x相等的话比较 y
+        - 这个正好是list的功能。可以用
+            ```python
+            if [-d, -p.x, -p.y] > h[0][0:3]:
+            ```
+            替代
+            ```python
+            if -d > h[0][0]:
+                flag = True
+            if -d == h[0][0] and -p.x > h[0][1]:
+                flag = True
+            if -d == h[0][0] and -p.x == h[0][1] and -p.y > h[0][2]:
+                flag = True
+            if flag:
+            ```
+            （终于优雅了一些）
 - 如果是完全相同的点的话，在heap比较的时候，无法比较挂在最后的点那个point object。
     - 为了避免这个情况，要在object前面挂一个每个点都不同的数字，这样可以阻断比较的过程
         - 可以挂一个随机数
