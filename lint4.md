@@ -52,3 +52,28 @@ class Solution:
 ```
 - 思路就是，用二分法分别找到用*2， *3， *5能做出来的，最小的，大于目前最大数的数字。
 - 需要注意的点是corner case。因为二分法必须从“前端不满足，后端满足”的数据上做。然而开始的数组太小，比如[1， 2]前后端都满足条件（1 * 3>2, 2 * 3>2）所以只能从比较大的数组开始。其中最小的最后一个数必须>=5。
+
+# Heap solution
+```python
+from heapq import heappush, heappop
+class Solution:
+    """
+    @param n: An integer
+    @return: return a  integer as description.
+    """
+    def nthUglyNumber(self, n):
+        if n == 1:
+            return 1
+            
+        nums = [1]
+        h = []
+        pushed = set()
+        while len(nums) < n:
+            for f in [2, 3, 5]:
+                candi = nums[-1] * f
+                if candi not in pushed:
+                    heappush(h, candi)
+                    pushed.add(candi)
+            nums.append(heappop(h))
+        return nums[-1]            
+```

@@ -14,6 +14,7 @@
 ## heap
 - [612. K Closest Points](lint612.md)
 - 544
+- [4. Ugly Number II](lint4.md)
 
 # 高级数据结构
 - Random access linked list: Linked-list + dictionary
