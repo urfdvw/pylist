@@ -4,6 +4,7 @@
 - [Binary Tree and DC](note_binary_tree_DC.md)
 - [Pointers](note_pointers.md)
 - [General DFS for finding all answers](note_DFS.md)
+- [DC with memory](note_mem_search.md)
 - [Data Structures](note_build_in_structure.md)
 - [Backpack](note_backpack.md)
 - [Non-Algorithm Problems](note_non_alg.md)
