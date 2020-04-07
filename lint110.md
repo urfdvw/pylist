@@ -20,4 +20,32 @@ Example 2:
 
 Notice
 
-    You can only go right or down in the path..
+    You can only go right or down in the path
+
+# solution
+```python
+from functools import lru_cache
+class Solution:
+    """
+    @param grid: a list of lists of integers
+    @return: An integer, minimizes the sum of all numbers along its path
+    """
+    def minPathSum(self, grid):
+        self.grid = grid
+        return self.dp(len(grid)-1, len(grid[0])-1)
+        
+    
+    @lru_cache(None)
+    def dp(self, m, n):
+        if m < 0 or n < 0:
+            return float('inf')
+        if m == 0 and n == 0:
+            return self.grid[0][0]
+        return min([self.dp(m-1, n), self.dp(m, n-1)]) + self.grid[m][n]
+            
+# care  float('inf'), and 0,0
+```
+
+# Care
+- `float('inf') `是为了在求最小时候让越界的坐标返回无用的值
+- 然而（0，0）这个坐标两边都是越界，要单独定义

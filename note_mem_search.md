@@ -14,4 +14,4 @@
 - [683. Word Break III](lint683.md)
 - [192. Wildcard Matching](lint192.md)
 - [154. Regular Expression Matching](lint154.md)
-- [110. Minimum Path Sum]
+- [110. Minimum Path Sum](lint110.md)
