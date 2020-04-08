@@ -15,3 +15,6 @@
 - [192. Wildcard Matching](lint192.md)
 - [154. Regular Expression Matching](lint154.md)
 - [110. Minimum Path Sum](lint110.md)
+- [111. Climbing Stairs](lint111.md)
+- [114. Unique Paths](lint114.md)
+- [115. Unique Paths II](lint115.md)
