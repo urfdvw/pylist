@@ -18,3 +18,4 @@
 - [111. Climbing Stairs](lint111.md)
 - [114. Unique Paths](lint114.md)
 - [115. Unique Paths II](lint115.md)
+- [76. Longest Increasing Subsequence](lint67.md)
