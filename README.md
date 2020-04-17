@@ -8,6 +8,8 @@
 - [Data Structures](note_build_in_structure.md)
 - [Backpack](note_backpack.md)
 - [Non-Algorithm Problems](note_non_alg.md)
+# Collections
+- [30-Day LeetCoding Challenge](note_30_Day_LeetCoding_Challenge.md)
 # MISC
 - [Python Cheat Sheet](note_python_cheat_sheet.md)
 - [Coding Style](note_style.md)
