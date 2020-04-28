@@ -20,4 +20,6 @@
 
 
 ---
+Visit https://urfdvw.github.io/pylist/ for a cleaner view of the content.
+
 Page made by [jekyll-relative-links](https://nicolas-van.github.io/easy-markdown-to-github-pages/)
