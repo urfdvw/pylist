@@ -49,3 +49,34 @@
             - 死循环不是一个好的style，实在不行可以换成for一个大数
         - 一个循环只做一件事，这个非常重要。做完就要continue或者break或者return。否则会糊粥。
             - **Style**: 多个if重叠的时候，可以在if之后加入注释，注明如果可以运行到注释这行，需要达到的条件。
+- [155. Min Stack](leet155.md)
+    - `stack`的进阶用法
+    - 这个题因为有minimum所以让我想到了heap。而heap在pop的时候会非常之复杂。虽然trash list的策略确实可以AC，但是其实既浪费时间又浪费空间。
+    - 常规错误
+        - 不要把attribute和method起同一个名字
+        - 用`a[0]`作为peek之前一定先判断list是否为空
+        - 不要在某些语句的末尾加入无意义的冒号
+            - 只要注意缩紧这个其实很容易避免
+- [543. Diameter of Binary Tree](leet543.md)
+    - DC on binary tree
+    - 二叉树上的分治在检查的时候一定注意：
+        - combine的时候有没有充分利用左右获得的答案
+- [1046. Last Stone Weight](leet1046.md)
+    - heap
+    - heapify has no out put, heap operations are inline
+    - max heap 的 负号位置
+        - ```python
+          h = [-s for s in stones]
+          heapify(h)
+          ```
+        - push: `heappush(h, -x)`
+        - pop:  `x = -heappop(h)`
+        - peek: `-h[0]`
+- [525. Contiguous Array](leet525.md)
+    - cumsum 的应用
+    - 注意 max 和 min 擂台的初始化
+        - 根据题目要求，不一定要初始化到正负无穷
+        - 比如这里 max 初始化到 0 就可以
+- [Perform String Shifts](leetw2ch7.md)
+    - circular shif
+    - 看题，左右都能看反我也是服了
