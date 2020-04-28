@@ -78,5 +78,5 @@
         - 根据题目要求，不一定要初始化到正负无穷
         - 比如这里 max 初始化到 0 就可以
 - [Perform String Shifts](leetw2ch7.md)
-    - circular shif
+    - circular shift
     - 看题，左右都能看反我也是服了
