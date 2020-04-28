@@ -14,3 +14,7 @@
 - [Python Cheat Sheet](note_python_cheat_sheet.md)
 - [Coding Style](note_style.md)
 - [Thoughts in Algorithms](note_highlevel.md)
+
+
+---
+Page made by [jekyll-relative-links](https://nicolas-van.github.io/easy-markdown-to-github-pages/)
