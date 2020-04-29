@@ -32,15 +32,15 @@ Data management: slicing Style
 - 删
   - `del s[i]`
   - `del s[i:j]`
-  - `del s[i:j:k]`
+  - `del s[i:j:k]` 
 - 查
   - `s[i]`
-  - `s[i:j]`
-  - `s[i:j:k]`
+  - `s[i:j]` 
+  - `s[i:j:k]` 越界自动停止
 - 改
   - `s[i] = x`
-  - `s[i:j] = t`
-  - `s[i,j,k]  = t`
+  - `s[i:j] = t` 大小不需要一致
+  - `s[i,j,k]  = t` 大小必须一致
 
 数学运算
 - 加减乘除
@@ -55,17 +55,17 @@ Data management: slicing Style
   - `a < b`
   - `a >= b`
 - 加减乘除
-  - `a | b`
-  - `a & b`
-  - `a - b`
-  - `a ^ b`
+  - `a | b` or
+  - `a & b` and
+  - `a - b` difference
+  - `a ^ b` symetric difference
 
 Data management
 - 增
   - `a.add(x)`
 - 删
-  - `a.remove(x)`
-  - `a.discard(x)`
+  - `a.remove(x)` will raise error
+  - `a.discard(x)` will not raise error if key not exist
   - `a.pop()`
   - `a.clear()`
 - 查
@@ -88,8 +88,8 @@ Data management
   - `d[key] = value`
 - 删
   - `del d[key]`
-  - `d.pop(key)`
-  - `d.popitem()`
+  - `d.pop(key)` return value
+  - `d.popitem()` for distruction
   - `a.clear()`
 - 查
   - iteration
@@ -106,6 +106,12 @@ Data management
 - 改
   - `d[key] = value`
   - `d1.update(d2)`
+  - `reversed(d)` 等同于 `reversed(d.keys())`
+
+关于方向
+- 3.7 和之后，dict 的 iterator 将会按照输入的顺序
+- 3.8 和之后，dict 可以 reverse
+- `set()`没有方向
 
 Operations with defaults
 - `d.get(key[, default])`
@@ -128,7 +134,7 @@ from collections import deque
 - 删
   - `q.pop()`
   - `q.popleft()`
-  - `q.remove(x)`
+  - `q.remove(x)` O(n) time complexity
 - 查
   - `q[i]`
     `q[0]` and `q[-1]` peek
@@ -143,15 +149,25 @@ from collections import deque
   - existence
     - `x in q`
 - 改
-  - `q.rotate(n=1)`
+  - `q.rotate(n=1)` O(n) time complexity
   - `q.reverse()`
 
 ## heapq
 ```python
-from heapq import heappush, heappop
-h = []
-heappush(h, 1)
-print(heappop(h))
+from heapq import heapify, heappush, heappop
+h = ***
+heapify(h)
+heappush(h, x)
+x = heappop(h)
+print(h[0]) # peek
+```
+max heap 的 负号位置
+```python
+h = [-x for x in array]
+heapify(h)
+heappush(h, -x)
+x = -heappop(h)
+print(-h[0]) # peek
 ```
 
 # 常用技巧
@@ -176,8 +192,8 @@ List 是可以按元素直接比较的，左边的权重高。
 [详情](sort_table.ipynb)
 
 Example
-- 209
-- 612
+- [209. First Unique Character in a String](lint209.md)
+- [612. K Closest Points](lint612.md)
 
 # 注意事项
 - `//` do floor operation to get the int number

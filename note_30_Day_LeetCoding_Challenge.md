@@ -80,3 +80,8 @@
 - [Perform String Shifts](leetw2ch7.md)
     - circular shift
     - 看题，左右都能看反我也是服了
+
+## week 3
+- [238. Product of Array Except Self](leet238.md)
+    - 双向 cumsum ，这里是product，不过和sum差别不大
+    - 循环还是分开写， 可以更清楚一些
