@@ -62,9 +62,12 @@
     - [159. Find Minimum in Rotated Sorted Array](lint159.md)
     - [585. Maximum Number in Mountain Sequence](lint585.md)
     - [4. Ugly Number II](lint4.md)
+    - [1008. Construct Binary Search Tree from Preorder Traversal](leet1008.md)
+    - [Leftmost Column with at Least a One](leetw3.md)
 - 缩小有解范围的大小
     - [75. Find Peak Element](lint75.md)
     - [62. Search in Rotated Sorted Array](lint62.md)
+    - [33. Search in Rotated Sorted Array](leet33.md)
 - 按结果搜索
     - [141. Sqrt(x)](lint141.md),
     - [183. Wood Cut](lint183.md),

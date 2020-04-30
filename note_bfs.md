@@ -76,6 +76,7 @@
     - [137. Clone Graph](lint137.md)
 - On Implicit Graph
     - [433. Number of Islands](lint433.md)
+    - [200. Number of Islands](leet200.md)
     - [611. Knight Shortest Path](lint611.md)
     - [120. Word Ladder](lint120.md)
 - topology sorting

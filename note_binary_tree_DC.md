@@ -49,13 +49,18 @@ return dfs(root)  # dfs(root)[0]
     - [578. Lowest Common Ancestor III](lint578.md)
     - [595. Binary Tree Longest Consecutive Sequence](lint595.md)
     - [614. Binary Tree Longest Consecutive Sequence II](lint614.md)
+    - [543. Diameter of Binary Tree](leet543.md)
+    - [124. Binary Tree Maximum Path Sum](leet124.md)
 - Binary Search Tree
     - [900. Closest Binary Search Tree Value](lint900.md)
     - [902. Kth Smallest Element in a BST](lint902.md)
     - [95. Validate Binary Search Tree](lint95.md)
+    - [1008. Construct Binary Search Tree from Preorder Traversal](leet1008.md)
 - non-recursion
     - [86. Binary Search Tree Iterator](lint86.md)
     - 901
+- traverse
+    - [Check If a String Is a Valid Sequence from Root to Leaves Path in a Binary Tree](leetw5.md)
 
 
 ## MISC

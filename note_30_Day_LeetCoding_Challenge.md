@@ -158,3 +158,9 @@
     - 虽然思考的时候卡壳了，不过写出来以后一遍过，可喜可贺
     - 这题的要点在于把每个节点都当作一条path的终点。而不是只考虑叶节点
     - 这题也是先用 list 想然后用 counter 优化
+- [Check If a String Is a Valid Sequence from Root to Leaves Path in a Binary Tree](leetw5.md)
+    - Binary tree traverse
+    - 二叉树的travers 需要 dummy root
+    - 递归之前需要判断左右节点的存在性
+        - 这样就不像 DC 那样有两个 和 None 有关的返回条件了
+            - 事实上一个都没有，全部的逻辑都在 return condition 部分
