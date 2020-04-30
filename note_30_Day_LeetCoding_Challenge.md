@@ -85,3 +85,34 @@
 - [238. Product of Array Except Self](leet238.md)
     - 双向 cumsum ，这里是product，不过和sum差别不大
     - 循环还是分开写， 可以更清楚一些
+- [678. Valid Parenthesis String](leet678.md)
+    - stack 进阶用法
+    - dfs 会超时
+    - 括号的配对原则
+        - ( [ ) ] 也一样成立
+    - 分析比较难的题，比较难总结，不过好歹是对了
+- [200. Number of Islands](leet200.md)
+    - BFS， 其实很简单，小错一堆
+    - 犯的常规错误
+        - deque()初始化的时候，里面一定要放一个list。
+            - 特别是每个元素都是tuple的时候，要放一个list of tuple
+        - `True`大写
+        - list of list 的双下标应该是 `[i][j]` 因为不是 numpy
+        - 判断要不要放 q 里的时候，一定先看一下 qed 里面是不是已经有了。q 和 qed 一定共同进退
+        - 一个输入参数一定看好格式，0 和 1 有可能是字符。
+- [64. Minimum Path Sum](leet64.md)
+    - 简单的 DP
+    - `functools` 库名称是有复数的
+- [33. Search in Rotated Sorted Array](leet33.md)
+    - 二分法
+    - 犯的错误
+        - 二分法不是想当然的不是up就是low，还有找不到的时候
+            - 最后返回的时候要判断两次，return 3 次
+        - copy 的代码，一定要好像重新写一样，完整得读一遍，边读边改。因为很多细节都不一样，有可能会遗漏。
+- [1008. Construct Binary Search Tree from Preorder Traversal](leet1008.md)
+    - Binary search tree
+        - 用二分法还原
+    - 犯的错误
+        - 检查拼写
+- [Leftmost Column with at Least a One](leetw3ch7.md)
+    - 打擂台 加 二分法
