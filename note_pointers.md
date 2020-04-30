@@ -12,3 +12,6 @@
     - [415. Valid Palindrome](lint415.md)
 - 背向双指针
     - [460. Find K Closest Elements](lint460.md)
+- cumsum
+    - 双向 cumsum
+        - [1422. Maximum Score After Splitting a String](leet1422.md)

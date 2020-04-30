@@ -26,7 +26,7 @@
     - 注意
         - string sort过之后是list
         - list不能作为dict的key
-- [Counting Elements](leetw1ch7.md)
+- [Counting Elements](leetw1.md)
     - `set`基础运用
     - 没有漏出破绽，秒杀
 
@@ -77,11 +77,11 @@
     - 注意 max 和 min 擂台的初始化
         - 根据题目要求，不一定要初始化到正负无穷
         - 比如这里 max 初始化到 0 就可以
-- [Perform String Shifts](leetw2ch7.md)
+- [Perform String Shifts](leetw2.md)
     - circular shift
     - 看题，左右都能看反我也是服了
 
-## week 3
+## Week 3
 - [238. Product of Array Except Self](leet238.md)
     - 双向 cumsum ，这里是product，不过和sum差别不大
     - 循环还是分开写， 可以更清楚一些
@@ -114,5 +114,47 @@
         - 用二分法还原
     - 犯的错误
         - 检查拼写
-- [Leftmost Column with at Least a One](leetw3ch7.md)
+- [Leftmost Column with at Least a One](leetw3.md)
     - 打擂台 加 二分法
+
+## Week 4
+- [560. Subarray Sum Equals K](leet560.md)
+    - cumsum 的进阶用法，inverse cumsum
+    - 如果一堆关系搞不清，可以先写一个 class 用于理清关系
+    - 如果一次想不清，可以先用成本高一些的方法看看大框架能不能行得通，如果行得通可以再 refine。比如这里不知道i有没有用，就先存着，后来发现只需要数目，就用计数器来替代list。
+- [201. Bitwise AND of Numbers Range](leet201.md)
+    - 二进制数学，
+        - 如果想清楚了，这个题目就是求 common prefix
+    - 漏了一个计算条件，不知道算什么错误
+- [146. LRU Cache](leet.146.md)
+    - dict + double linked list 自定数据结构
+        - previous node dictionary
+    - 一定切记，定义新的数据格式的时候，要么新定义一个class，要么写好接口再用，否则很容易糊粥。
+    - 又有一个拼写错误
+- [55. Jump Game](leet55.md)
+    - simulation, 秒杀
+- [1143. Longest Common Subsequence](leet1143.md)
+    - DP， 两字符串，看hint之前没能自己想出来
+    - dp 的精髓就是找到状态和转移方程
+        - 两string的题一般是这种二维状态表
+        - 转移方程很可能是这种向上向左的
+- [221. Maximal Square](leet221.md)
+    - DP
+    - 尼玛看题，看题，看题。第一次看成求和，第二次看成长方形我真是服了。
+    - list of list deep copy:
+        - `left = [a + [] for a in matrix] + []`
+    - 这题有 insane empty test case
+- [First Unique Number](leetw4.md)
+    - 自定义数据结构
+        - set + deque
+        - set 也可以换成dict计数器
+    - 拼写
+    - `self.`
+    - 每个 condition 之间用 break，continue 或者 return 隔开
+
+## Week 5
+- [124. Binary Tree Maximum Path Sum](leet124.md)
+    - Binary Tree DC
+    - 虽然思考的时候卡壳了，不过写出来以后一遍过，可喜可贺
+    - 这题的要点在于把每个节点都当作一条path的终点。而不是只考虑叶节点
+    - 这题也是先用 list 想然后用 counter 优化
