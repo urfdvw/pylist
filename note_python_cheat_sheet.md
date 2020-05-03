@@ -109,7 +109,11 @@ Data management
   - `reversed(d)` 等同于 `reversed(d.keys())`
 
 关于方向
-- 3.7 和之后，dict 的 iterator 将会按照输入的顺序
+- 3.7 和之后，dict 的 iterator 将会按照加入的顺序
+  - 新加入才算
+  - 修改不算
+  - 删除后再加入算新加入
+
 - 3.8 和之后，dict 可以 reverse
 - `set()`没有方向
 
