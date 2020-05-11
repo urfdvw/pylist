@@ -9,7 +9,7 @@
     - `while`的开头和收尾， *目前好像没什么好的办法* 
 - [53. Maximum Subarray](leet53.md)
     - cumsum 的应用
-    - 秒杀，因为做过原题
+    - 秒杀，因为做过原题
     - 计算max和min的时候，注意要不要包括当前点
         - 如果包括就先update再计算
         - 如果不包括就先计算再update

@@ -17,3 +17,27 @@
 - Sort Characters By Frequency
     - string
     - 特殊sort key, 参见[cheat sheet](note_python_cheat_sheet.md)
+- First Unique Character in a String
+    - string
+    - 扫一遍和扫两遍地时间复杂度是一样的，先试着做扫两遍，实现了再说
+        - 先实现比较稳妥的算法，然后再扩展，即使用内部函数或者牺牲局部的时间复杂度
+    - 又一次混了 dict 的 key 和 value
+- Meeting Rooms II
+    - sorting
+    - 小错一堆，少写参数什么的
+- Populating Next Right Pointers in Each Node II
+    - BFS
+    - 少写一个下标
+    - 少写一个return
+    - 没处理空集输入
+- Add Two Numbers
+    - linked list
+    - copy paste 少改了东西 
+        - 妈的copy paste只能用来保证拼写错误，不能用来省略写代码的过程
+    - while 的条件又有问题
+        - 还是先写while True比较保险
+        - 事后再改
+- String Compression
+    - string inplace
+    - inplace 的意思是输出的结果直接写在输入的地址上
+    - `\\=` 忘掉了 `=`
