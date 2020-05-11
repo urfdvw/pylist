@@ -14,3 +14,6 @@
     - DP
     - 又写了意义不明的`:`结尾
     - `dp`算出来了，但是在最终结果里忘记用了，好像是第二次了
+- Sort Characters By Frequency
+    - string
+    - 特殊sort key, 参见[cheat sheet](note_python_cheat_sheet.md)
