@@ -12,6 +12,7 @@
 
 ## Collections
 - [30-Day LeetCoding Challenge](note_30_Day_LeetCoding_Challenge.md)
+- [毕设卡组](note_bishe_stack.md)
 
 ## MISC
 - [Python Cheat Sheet](note_python_cheat_sheet.md)

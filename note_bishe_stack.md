@@ -1,0 +1,16 @@
+- Pascal's Triangle
+    - simulation
+    - for循环的层数需要确认，就好像dfs的层数需要确认
+- Add Two Numbers II
+    - linked list
+    - pop 之前一定先判断存在性
+- Two Sum
+    - dict
+    - `setdefault` 拼写
+- Longest Substring Without Repeating Characters
+    - pointer and set
+    - 这次是把 index 和 值 搞混了
+- Longest Palindromic Substring
+    - DP
+    - 又写了意义不明的`:`结尾
+    - `dp`算出来了，但是在最终结果里忘记用了，好像是第二次了

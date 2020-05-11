@@ -175,7 +175,7 @@ print(-h[0]) # peek
 ```
 
 # 常用技巧
-用for-else代替flag的使用
+## 用for-else代替flag的使用
 ```python
 for item in container:
     if search_something(item):
@@ -186,7 +186,59 @@ else:
     # Didn't find anything..
     not_found_in_container()
 ```
+## Lambda function
+```python
+fun1 = lambda x: -x * 10
+print(fun1(1))
+```
+```
+-10
+```
+same as 
+```python
+def fun2(x): return -x * 10
+print(fun2(1))
+```
+```
+-10
+```
+in sorting
+```python
+a = [1, 4, -1, -3]
+print(sorted(a))
+print(sorted(a, key=fun1))
+print(a)
+print(a.sort(key=fun2))
+print(a)
+```
+```
+[-3, -1, 1, 4]
+[4, 1, -1, -3]
+[1, 4, -1, -3]
+None
+[4, 1, -1, -3]
+```
+`a.sort()` won't return anything
+```python
+ab = {'a':1, 'b':2, 'c': 4, 'd':3}
+data = 'babdc'
+data.sort()
+```
+```
+      1 ab = {'a':1, 'b':2, 'c': 4, 'd':3}
+      2 data = 'babdc'
+----> 3 data.sort()
 
+AttributeError: 'str' object has no attribute 'sort'
+```
+```python
+print(sorted(data))
+print(sorted(data, key=lambda x: ab[x]))
+```
+```
+['a', 'b', 'b', 'c', 'd']
+['a', 'b', 'b', 'd', 'c']
+```
 # Sort table
 List 是可以按元素直接比较的，左边的权重高。
 所以List of List 是可以直接sort的。
@@ -198,6 +250,37 @@ List 是可以按元素直接比较的，左边的权重高。
 Example
 - [209. First Unique Character in a String](lint209.md)
 - [612. K Closest Points](lint612.md)
+
+# key in heap
+`heappush()` and `heappop` does not have `key` attr. Need to define a `__lt__()` function for the same propose
+
+```python
+from heapq import heappush, heappop
+# self defined value
+ab = {'a':1, 'b':2, 'c': 4, 'd':3}
+# data
+data = 'babdc'
+# char class to define the comparison function
+class char:
+    def __init__(self, val):
+        self.val = val
+    def __lt__(self, other):
+        if ab[self.val] < ab[other.val]:
+            return True
+        else:
+            return False
+# heap sort
+h = []
+for c in data:
+    heappush(h, char(c))
+ans = []
+while h:
+    ans.append(heappop(h).val)
+print(ans)
+```
+```
+['a', 'b', 'b', 'd', 'c']
+```
 
 # 注意事项
 - `//` do floor operation to get the int number
