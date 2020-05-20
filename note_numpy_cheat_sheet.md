@@ -73,3 +73,7 @@ print(data.shape)
 ```
 (6,)
 ```
+
+## inplace or not
+- `a.sort()` is in-place
+- `a.flatten()` is not in-place
