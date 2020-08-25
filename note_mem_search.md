@@ -22,3 +22,4 @@
 - [76. Longest Increasing Subsequence](lint67.md)
 - [1143. Longest Common Subsequence](leet1143.md)
 - [221. Maximal Square](leet221.md)
+- [983. Minimum Cost For Tickets](leet983.md)
