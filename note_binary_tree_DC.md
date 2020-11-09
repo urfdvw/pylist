@@ -52,6 +52,7 @@ return dfs(root)  # dfs(root)[0]
     - [543. Diameter of Binary Tree](leet543.md)
     - [124. Binary Tree Maximum Path Sum](leet124.md)
     - [404. Sum of Left Leaves](leet404.md)
+    - [1026. Maximum Difference Between Node and Ancestor](leet1026.md)
 - Binary Search Tree
     - [900. Closest Binary Search Tree Value](lint900.md)
     - [902. Kth Smallest Element in a BST](lint902.md)
