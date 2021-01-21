@@ -282,6 +282,35 @@ print(ans)
 ['a', 'b', 'b', 'd', 'c']
 ```
 
+# Zip
+zip 的操作是把同index放在一个tuple里，所以和转置息息相关。
+注意zip的输出不是list，而是一个zip，可用作iter
+
+使用zip函数转置list of tuples
+```python
+# Python3 code to demonstrate  
+# Unzip a list of tuples 
+# using zip() and * operator 
+  
+# initializing list of tuples 
+test_list = [('Akshat', 1), ('Bro', 2), ('is', 3), ('Placed', 4)] 
+  
+# Printing original list 
+print ("Original list is : " + str(test_list)) 
+  
+# using zip() and * operator to 
+# perform Unzipping 
+res = list(zip(*test_list)) 
+      
+# Printing modified list  
+print ("Modified list is : " + str(res)) 
+```
+```
+Original list is : [('Akshat', 1), ('Bro', 2), ('is', 3), ('Placed', 4)]
+Modified list is : [('Akshat', 'Bro', 'is', 'Placed'), (1, 2, 3, 4)]
+```
+
+
 # 注意事项
 - `//` do floor operation to get the int number
   - ```
