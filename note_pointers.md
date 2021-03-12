@@ -14,6 +14,11 @@
     - [200. Longest Palindromic Substring](lint200.md)，也是背向，但不是背向双指针
 - 对向双指针
     - [415. Valid Palindrome](lint415.md)
+    - **X-Sum**
+        - [1. Two Sum](leet1.md)
+        - [15. 3Sum](leet15.md)
+        - [16. 3Sum Closest](leet16.md)
+        - [18. 4Sum](leet18.md)
 - 背向双指针
     - [460. Find K Closest Elements](lint460.md)
 - cumsum
