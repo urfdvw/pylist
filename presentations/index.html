@@ -18,6 +18,10 @@
         <button onclick="start()">Start</button>
         <button onclick="next()">Next Step</button>
     </div>
+    <div style="position: fixed; right: 10px; top: 10px">
+        <button onclick="code.setFontSize(parseInt(code.getFontSize() * 1.4)); steps.setFontSize(code.getFontSize());">Font +</button>
+        <button onclick="code.setFontSize(parseInt(code.getFontSize() / 1.4)); steps.setFontSize(code.getFontSize());">Font -</button>
+    </div>
     <script>
         // running local server
         // python -m http.server 
