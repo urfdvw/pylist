@@ -89,7 +89,7 @@
 
             var steps_text = ''
             try {
-                steps_text = text.split('<!-- steps\n')[1].split('\n-->')[0]
+                steps_text = text.split('```steps\n')[1].split('\n```')[0]
             } catch {
                 steps_text = ""
                 for (var i = 0; i < code_lines.length; i++) {

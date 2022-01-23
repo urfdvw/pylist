@@ -72,7 +72,7 @@ class Solution:
         ] # all possible neighbors
         return out
 ```
-<!-- steps
+```steps
 1, 2
 5
 8
@@ -98,7 +98,7 @@ class Solution:
 36, 37
 38
 40 
--->
+```
 
 
 思路
