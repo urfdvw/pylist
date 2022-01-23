@@ -1,0 +1,33 @@
+<div id="editor">"""
+    The LED light will bink for 10 times.
+
+    The LED light is controlled by a digital output pin.
+    When the output is HIGH voltage, which means providing power, the LED light is on.
+    When the output is LOW voltage, which means not providing power, the LED light is off.
+    """
+
+    import nightlight as nl # the module for night light experiments
+    import board # the module for the names of the PINs on boards
+    import time # the module for time related functions
+
+    led = nl.DigitalOut(board.A4) # define pin A4 to be used as digital output, controlling the LED light
+    for i in range(10): # repeat for 10 times
+    led.set(True) # set the pin voltage to be HIGH, which means turning on LED
+    time.sleep(0.1) # wait for 0.1s, the led keeps on
+    led.set(False) # set the pin voltage to be LOW, which means turning off LED
+    time.sleep(0.1) # wait for 0.1s, the led keeps off
+</div>
+<script src="https://pagecdn.io/lib/ace/1.4.13/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://pagecdn.io/lib/ace/1.4.13/ext-language_tools.js"></script>
+<script>
+    ace.require("ace/ext/language_tools");
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/python");
+    editor.setReadOnly(true);
+    editor.session.setUseWrapMode(true);
+    editor.setOptions({
+        // https://stackoverflow.com/a/13579233/7037749
+        maxLines: Infinity
+    });
+</script>

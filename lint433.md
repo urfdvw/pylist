@@ -98,7 +98,7 @@ class Solution:
 
 Special care:
 - avoid using try catch
-- ```(1, 2) + (3, 4)``` returns ```(4, 6)```, so `alter` need to be breaked in to 2 parts
+- ```(1, 2) + (3, 4)``` does not return ```(4, 6)```, so `alter` need to be breaked in to 2 parts
 - check ```len(grid)``` then ```len(grid[0])```, don't forget ```[0]```
 - 地图搜索题一般都有一个**边界函数**和一个**邻居寻找函数**
 - 因为BSF退出时候`queued`会保存所有访问过的地点，所以在位置循环里面，可以用`queued`作为是否访问过的标记。

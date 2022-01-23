@@ -4,24 +4,86 @@ Given a 2d grid map of '1's (land) and '0's (water), count the number of islands
 
 Example 1:
 
-    Input:
-    11110
-    11010
-    11000
-    00000
-
+    Input: grid = [
+    ["1","1","1","1","0"],
+    ["1","1","0","1","0"],
+    ["1","1","0","0","0"],
+    ["0","0","0","0","0"]
+    ]
     Output: 1
+
 Example 2:
 
-    Input:
-    11000
-    11000
-    00100
-    00011
-
+    Input: grid = [
+    ["1","1","0","0","0"],
+    ["1","1","0","0","0"],
+    ["0","0","1","0","0"],
+    ["0","0","0","1","1"]
+    ]
     Output: 3
 
+Constraints:
+- m == grid.length
+- n == grid[i].length
+- 1 <= m, n <= 300
+- grid[i][j] is '0' or '1'.
+
 # Solution
+```python
+class Solution:
+    def numIslands(self, grid: List[List[str]]) -> int:
+        counter = 0
+        qed = set()
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                if (grid[i][j] == '1' # if island
+                    and (i, j) not in qed): # if never entered the queue
+                    counter += 1 # add one island
+                    # bsf traverse to visit all locations of the island
+                    q = deque([(i, j)]) # queue for a single island
+                    while q:
+                        node = q.popleft()
+                        neis = self.get_neis(grid, node)
+                        for n in neis:
+                            if n not in qed:
+                                q.append(n)
+                                qed.add(n)
+        return counter
+    
+    def get_neis(self, grid, node):
+        alter = [
+            [1, 0],
+            [0, 1],
+            [-1, 0],
+            [0, -1],
+        ]
+        out = [
+            tuple(a[i] + node[i] for i in range(2)) 
+            for a in alter 
+        ] # 4 directions from the node
+        out = [
+            n
+            for n in out
+            if 0 <= n[0] < len(grid) 
+            and 0 <= n[1] < len(grid[0]) # if in the grid
+            and grid[n[0]][n[1]] == '1' # if is island
+        ] # all possible neighbors
+        return out
+```
+思路
+- 能把两个坐标一起处理的时候尽量一起处理，两个坐标绑在一个 tuple 里方便 set 查重。
+
+Python 要点
+- ```tuple``` comprehension 的写法是 ```tupple( ... )``` 而不是 ```()```
+    - ref: https://stackoverflow.com/a/16940351/7037749
+- double list comprehension  的顺序是 和 嵌套 for 的顺讯是一样的
+    - ref：https://stackoverflow.com/a/36734643/7037749
+- ```()``` 内可以在运算符之前或者之后换行。
+    - 所以，如果遇到 if 有多个条件的时候，可以用 ```if ():``` 然后括号里有多行
+    - Comprehension 以为也带着括号，所以可以在关键词处换行
+- Python 里面的判断大小的 ```<```,```<=``` 等符号可以串联，以省略一堆 ```and```
+
+# Arcived Solution
 ```python
 from collections import deque
 class Solution:
