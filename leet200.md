@@ -70,6 +70,12 @@ class Solution:
         ] # all possible neighbors
         return out
 ```
+```steps
+1,
+2,
+```
+[Code Steps](./presentations/?id=leet200)
+
 思路
 - 能把两个坐标一起处理的时候尽量一起处理，两个坐标绑在一个 tuple 里方便 set 查重。
 

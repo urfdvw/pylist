@@ -1,33 +1,61 @@
-<div id="editor">"""
-    The LED light will bink for 10 times.
-
-    The LED light is controlled by a digital output pin.
-    When the output is HIGH voltage, which means providing power, the LED light is on.
-    When the output is LOW voltage, which means not providing power, the LED light is off.
-    """
-
-    import nightlight as nl # the module for night light experiments
-    import board # the module for the names of the PINs on boards
-    import time # the module for time related functions
-
-    led = nl.DigitalOut(board.A4) # define pin A4 to be used as digital output, controlling the LED light
-    for i in range(10): # repeat for 10 times
-    led.set(True) # set the pin voltage to be HIGH, which means turning on LED
-    time.sleep(0.1) # wait for 0.1s, the led keeps on
-    led.set(False) # set the pin voltage to be LOW, which means turning off LED
-    time.sleep(0.1) # wait for 0.1s, the led keeps off
-</div>
+<h3>Solution Code</h3>
+<div id="code"></div>
+<h3>Steps</h3>
+<div id="steps"></div>
 <script src="https://pagecdn.io/lib/ace/1.4.13/ace.js" type="text/javascript" charset="utf-8"></script>
 <script src="https://pagecdn.io/lib/ace/1.4.13/ext-language_tools.js"></script>
 <script>
+    // running local server
+    // python -m http.server 
+
+    /*
+     * ace
+     */
+
     ace.require("ace/ext/language_tools");
-    var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/monokai");
-    editor.session.setMode("ace/mode/python");
-    editor.setReadOnly(true);
-    editor.session.setUseWrapMode(true);
-    editor.setOptions({
+    var code = ace.edit("code");
+    code.session.setMode("ace/mode/python");
+    code.setReadOnly(true);
+    code.session.setUseWrapMode(true);
+    code.setOptions({
         // https://stackoverflow.com/a/13579233/7037749
         maxLines: Infinity
     });
+
+    var steps = ace.edit("steps");
+    steps.session.setMode("ace/mode/python");
+    steps.session.setUseWrapMode(true);
+    steps.setOptions({
+        maxLines: Infinity
+    });
+    
+    /*
+     * file reading
+     */
+
+    function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
+    var id = getUrlParameter('id');
+
+    // https://stackoverflow.com/a/25796149/7037749
+    var jsonFile = new XMLHttpRequest();
+    jsonFile.open("GET", '../' + id + '.md', true);
+    jsonFile.send();
+
+    var code_text = ''
+    var steps_text = ''
+    jsonFile.onreadystatechange = function () {
+        if (jsonFile.readyState == 4 && jsonFile.status == 200) {
+            var text = jsonFile.responseText;
+            code_text = text.split('```python\n')[1].split('\n```')[0]
+            code.setValue(code_text, -1)
+            steps_text = text.split('```steps\n')[1].split('\n```')[0]
+            steps.setValue(steps_text, -1)
+        }
+    }
 </script>
