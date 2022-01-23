@@ -32,38 +32,39 @@ Constraints:
 ```python
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
-        counter = 0
-        qed = set()
+        counter = 0 # counter for inslands
+        qed = set() # record ever enqueued locations
+        # loop iterate thorouh all locations
         for i in range(len(grid)):
             for j in range(len(grid[0])):
+                # if it is a new island
                 if (grid[i][j] == '1' # if island
                     and (i, j) not in qed): # if never entered the queue
                     counter += 1 # add one island
-                    # bsf traverse to visit all locations of the island
+                    # bsf traverse to visit all locations of the current island
                     q = deque([(i, j)]) # queue for a single island
-                    while q:
-                        node = q.popleft()
-                        neis = self.get_neis(grid, node)
-                        for n in neis:
-                            if n not in qed:
-                                q.append(n)
-                                qed.add(n)
+                    while q: # if queue not empty
+                        node = q.popleft() # current location
+                        neis = self.get_neis(grid, node) # get all neighbors
+                        for n in neis: # iterate through
+                            if n not in qed: # if never enqueued
+                                q.append(n) # enqueue
+                                qed.add(n) # record enqueue
         return counter
     
     def get_neis(self, grid, node):
         alter = [
-            [1, 0],
-            [0, 1],
-            [-1, 0],
-            [0, -1],
-        ]
+            (1, 0),
+            (0, 1),
+            (-1, 0),
+            (0, -1),
+        ] # 4 directions
         out = [
-            tuple(a[i] + node[i] for i in range(2)) 
+            tuple(a[i] + node[i] for i in range(2)) # two axes
             for a in alter 
         ] # 4 directions from the node
         out = [
-            n
-            for n in out
+            n for n in out
             if 0 <= n[0] < len(grid) 
             and 0 <= n[1] < len(grid[0]) # if in the grid
             and grid[n[0]][n[1]] == '1' # if is island
@@ -71,8 +72,7 @@ class Solution:
         return out
 ```
 ```steps
-1
-2
+1, 2
 ```
 [Code Steps](./presentations/?id=leet200)
 

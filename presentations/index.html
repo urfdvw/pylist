@@ -1,62 +1,85 @@
-<h3>Solution Code</h3>
-<div id="code"></div>
-<h3>Steps</h3>
-<div id="steps"></div>
-<div style="position: fixed; right: 10px; bottom: 10px">
-    <button onclick="show_all()">Show All</button>
-    <button onclick="start()">Start</button>
-    <button onclick="next()">Next Step</button>
-</div>
-<script src="https://pagecdn.io/lib/ace/1.4.13/ace.js" type="text/javascript" charset="utf-8"></script>
-<script src="https://pagecdn.io/lib/ace/1.4.13/ext-language_tools.js"></script>
-<script>
-    // running local server
-    // python -m http.server 
+<!DOCTYPE html>
+<html>
 
-    /*
-     * ace
-     */
+<head>
+    <script src="https://pagecdn.io/lib/ace/1.4.13/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://pagecdn.io/lib/ace/1.4.13/ext-language_tools.js"></script>
+</head>
 
-    ace.require("ace/ext/language_tools");
-    var code = ace.edit("code");
-    code.session.setMode("ace/mode/python");
-    code.setReadOnly(true);
-    code.session.setUseWrapMode(true);
-    code.setOptions({
-        // https://stackoverflow.com/a/13579233/7037749
-        maxLines: Infinity
-    });
+<body>
 
-    var steps = ace.edit("steps");
-    steps.session.setMode("ace/mode/python");
-    steps.session.setUseWrapMode(true);
-    steps.setOptions({
-        maxLines: Infinity
-    });
+    <h3>Solution Code</h3>
+    <div id="code"></div>
+    <h3>Steps</h3>
+    <div id="steps"></div>
+    <div style="position: fixed; right: 10px; bottom: 10px">
+        <button id="inputfile"> Open </button>
+        <button onclick="show_all()">Show All</button>
+        <button onclick="start()">Start</button>
+        <button onclick="next()">Next Step</button>
+    </div>
+    <script>
+        // running local server
+        // python -m http.server 
 
-    /*
-     * file reading
-     */
+        /*
+         * ace
+         */
 
-    function getUrlParameter(name) {
-        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-        var results = regex.exec(location.search);
-        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-    }
+        ace.require("ace/ext/language_tools");
+        var code = ace.edit("code");
+        code.session.setMode("ace/mode/python");
+        code.setReadOnly(true);
+        code.session.setUseWrapMode(true);
+        code.setOptions({
+            // https://stackoverflow.com/a/13579233/7037749
+            maxLines: Infinity
+        });
 
-    var id = getUrlParameter('id');
+        var steps = ace.edit("steps");
+        steps.session.setMode("ace/mode/python");
+        steps.session.setUseWrapMode(true);
+        steps.setOptions({
+            maxLines: Infinity
+        });
 
-    // https://stackoverflow.com/a/25796149/7037749
-    var jsonFile = new XMLHttpRequest();
-    jsonFile.open("GET", '../' + id + '.md', true);
-    jsonFile.send();
+        /*
+         * file reading
+         */
 
-    var code_lines = []
-    var code_text = ''
-    jsonFile.onreadystatechange = function () {
-        if (jsonFile.readyState == 4 && jsonFile.status == 200) {
-            var text = jsonFile.responseText;
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        var id = getUrlParameter('id');
+
+        // https://stackoverflow.com/a/25796149/7037749
+        var jsonFile = new XMLHttpRequest();
+        jsonFile.open("GET", '../' + id + '.md', true);
+        jsonFile.send();
+
+        var code_lines = []
+        var code_text = ''
+        jsonFile.onreadystatechange = function () {
+            if (jsonFile.readyState == 4 && jsonFile.status == 200) {
+                var text = jsonFile.responseText;
+                process_raw_text(text)
+            }
+        }
+
+        let fileHandle;
+        var butOpenFile = document.getElementById("inputfile")
+        butOpenFile.addEventListener('click', async () => {
+            [fileHandle] = await window.showOpenFilePicker();
+            const file = await fileHandle.getFile();
+            var text = await file.text();
+            await process_raw_text(text)
+        });
+
+        function process_raw_text(text) {
             code_text = text.split('```python\n')[1].split('\n```')[0]
             code_lines = code_text.split('\n')
 
@@ -75,48 +98,54 @@
             steps.setValue(steps_text, -1)
             show_all()
         }
-    }
 
-    var step_index = 0
+        /*
+         * Code display
+         */
 
-    function get_code_index_from_steps() {
-        steps.gotoLine(step_index + 1, 0)
-        var code_index = steps.session.getLine(step_index).split(',')
-        out = []
-        for (var i = 0; i < code_index.length; i++) {
-            out.push(parseInt(code_index[i].trim()))
+        var step_index = 0
+
+        function get_code_index_from_steps() {
+            steps.gotoLine(step_index + 1, 0)
+            var code_index = steps.session.getLine(step_index).split(',')
+            out = []
+            for (var i = 0; i < code_index.length; i++) {
+                out.push(parseInt(code_index[i].trim()))
+            }
+            return out
         }
-        return out
-    }
 
-    function print_code() {
-        var code_index = get_code_index_from_steps()
-        for (var i = 0; i < code_index.length; i++) {
-            code.gotoLine(code_index[i], 0, true)
-            code.insert(code_lines[code_index[i] - 1])
-            console.log(code_index[i] - 1, code_lines[code_index[i] - 1])
+        function print_code() {
+            var code_index = get_code_index_from_steps()
+            for (var i = 0; i < code_index.length; i++) {
+                code.gotoLine(code_index[i], 0, true)
+                code.insert(code_lines[code_index[i] - 1])
+                console.log(code_index[i] - 1, code_lines[code_index[i] - 1])
+            }
         }
-    }
 
-    function start() {
-        var code_text = '\n'.repeat(code_lines.length - 1)
-        code.setValue(code_text, -1)
-        step_index = 0
-        print_code()
-    }
-
-    function next() {
-        step_index += 1
-        if (step_index >= steps.session.doc.getAllLines().length) {
-            step_index -= 1
-            return
+        function start() {
+            var code_text = '\n'.repeat(code_lines.length - 1)
+            code.setValue(code_text, -1)
+            step_index = 0
+            print_code()
         }
-        print_code()
-    }
 
-    function show_all() {
-        step_index = steps.session.doc.getAllLines().length - 1 
-        code.setValue(code_text, -1)
-        steps.gotoLine(0, 0)
-    }
-</script>
+        function next() {
+            step_index += 1
+            if (step_index >= steps.session.doc.getAllLines().length) {
+                step_index -= 1
+                return
+            }
+            print_code()
+        }
+
+        function show_all() {
+            step_index = steps.session.doc.getAllLines().length - 1
+            code.setValue(code_text, -1)
+            steps.gotoLine(0, 0)
+        }
+    </script>
+</body>
+
+</html>
