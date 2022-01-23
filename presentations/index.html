@@ -2,6 +2,10 @@
 <div id="code"></div>
 <h3>Steps</h3>
 <div id="steps"></div>
+<div style="position: fixed; right: 10px; top: 10px">
+    <button>Reset</button>
+    <button>Next Step</button>
+</div>
 <script src="https://pagecdn.io/lib/ace/1.4.13/ace.js" type="text/javascript" charset="utf-8"></script>
 <script src="https://pagecdn.io/lib/ace/1.4.13/ext-language_tools.js"></script>
 <script>
@@ -28,7 +32,7 @@
     steps.setOptions({
         maxLines: Infinity
     });
-    
+
     /*
      * file reading
      */
