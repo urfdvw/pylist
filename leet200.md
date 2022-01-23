@@ -29,6 +29,7 @@ Constraints:
 - grid[i][j] is '0' or '1'.
 
 # Solution
+[Code Steps](./presentations/?id=leet200)
 ```python
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
@@ -71,10 +72,34 @@ class Solution:
         ] # all possible neighbors
         return out
 ```
-```steps
+<!-- steps
 1, 2
-```
-[Code Steps](./presentations/?id=leet200)
+5
+8
+12
+3, 21
+6, 7
+9
+10
+11
+13
+4
+14
+15
+16, 17
+23
+18
+19, 20
+24, 25, 26, 27, 28, 29
+30, 33
+32
+31
+34, 35, 39
+36, 37
+38
+40 
+-->
+
 
 思路
 - 能把两个坐标一起处理的时候尽量一起处理，两个坐标绑在一个 tuple 里方便 set 查重。
