@@ -71,8 +71,8 @@ class Solution:
         return out
 ```
 ```steps
-1,
-2,
+1
+2
 ```
 [Code Steps](./presentations/?id=leet200)
 

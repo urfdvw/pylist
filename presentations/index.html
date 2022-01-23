@@ -2,9 +2,10 @@
 <div id="code"></div>
 <h3>Steps</h3>
 <div id="steps"></div>
-<div style="position: fixed; right: 10px; top: 10px">
-    <button>Reset</button>
-    <button>Next Step</button>
+<div style="position: fixed; right: 10px; bottom: 10px">
+    <button onclick="show_all()">Show All</button>
+    <button onclick="start()">Start</button>
+    <button onclick="next()">Next Step</button>
 </div>
 <script src="https://pagecdn.io/lib/ace/1.4.13/ace.js" type="text/javascript" charset="utf-8"></script>
 <script src="https://pagecdn.io/lib/ace/1.4.13/ext-language_tools.js"></script>
@@ -51,15 +52,71 @@
     jsonFile.open("GET", '../' + id + '.md', true);
     jsonFile.send();
 
+    var code_lines = []
     var code_text = ''
-    var steps_text = ''
     jsonFile.onreadystatechange = function () {
         if (jsonFile.readyState == 4 && jsonFile.status == 200) {
             var text = jsonFile.responseText;
             code_text = text.split('```python\n')[1].split('\n```')[0]
-            code.setValue(code_text, -1)
-            steps_text = text.split('```steps\n')[1].split('\n```')[0]
+            code_lines = code_text.split('\n')
+
+            var steps_text = ''
+            try {
+                steps_text = text.split('```steps\n')[1].split('\n```')[0]
+            } catch {
+                steps_text = ""
+                for (var i = 0; i < code_lines.length; i++) {
+                    steps_text += i + 1
+                    if (i != code_lines.length - 1) {
+                        steps_text += '\n'
+                    }
+                }
+            }
             steps.setValue(steps_text, -1)
+            show_all()
         }
+    }
+
+    var step_index = 0
+
+    function get_code_index_from_steps() {
+        steps.gotoLine(step_index + 1, 0)
+        var code_index = steps.session.getLine(step_index).split(',')
+        out = []
+        for (var i = 0; i < code_index.length; i++) {
+            out.push(parseInt(code_index[i].trim()))
+        }
+        return out
+    }
+
+    function print_code() {
+        var code_index = get_code_index_from_steps()
+        for (var i = 0; i < code_index.length; i++) {
+            code.gotoLine(code_index[i], 0, true)
+            code.insert(code_lines[code_index[i] - 1])
+            console.log(code_index[i] - 1, code_lines[code_index[i] - 1])
+        }
+    }
+
+    function start() {
+        var code_text = '\n'.repeat(code_lines.length - 1)
+        code.setValue(code_text, -1)
+        step_index = 0
+        print_code()
+    }
+
+    function next() {
+        step_index += 1
+        if (step_index >= steps.session.doc.getAllLines().length) {
+            step_index -= 1
+            return
+        }
+        print_code()
+    }
+
+    function show_all() {
+        step_index = steps.session.doc.getAllLines().length - 1 
+        code.setValue(code_text, -1)
+        steps.gotoLine(0, 0)
     }
 </script>
