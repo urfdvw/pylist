@@ -2,8 +2,22 @@
 <html>
 
 <head>
+    <style>
+        body {
+            overflow-x: hidden;
+            /* Hide horizontal scrollbar */
+        }
+
+        #follow {
+            position: absolute;
+            text-align: center;
+            color: rgba(128, 128, 128, 0.5);
+            font-size: 30px;
+        }
+    </style>
     <script src="https://pagecdn.io/lib/ace/1.4.13/ace.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://pagecdn.io/lib/ace/1.4.13/ext-language_tools.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -19,8 +33,16 @@
         <button onclick="next()">Next Step</button>
     </div>
     <div style="position: fixed; right: 10px; top: 10px">
-        <button onclick="code.setFontSize(parseInt(code.getFontSize() * 1.4)); steps.setFontSize(code.getFontSize());">Font +</button>
-        <button onclick="code.setFontSize(parseInt(code.getFontSize() / 1.4)); steps.setFontSize(code.getFontSize());">Font -</button>
+        <button
+            onclick="code.setFontSize(parseInt(code.getFontSize() * 1.4)); steps.setFontSize(code.getFontSize());">Font
+            +</button>
+        <button
+            onclick="code.setFontSize(parseInt(code.getFontSize() / 1.4)); steps.setFontSize(code.getFontSize());">Font
+            -</button>
+    </div>
+    <div id="follow">
+        <img src="watermark.png" height="40">
+        <!-- 何术生 bilibili -->
     </div>
     <script>
         // running local server
@@ -149,6 +171,17 @@
             code.setValue(code_text, -1)
             steps.gotoLine(0, 0)
         }
+
+        /*
+         * Watermark
+         */
+        $(document).mousemove(function (e) {
+            // https://stackoverflow.com/a/7143883
+            $("#follow").css({
+                left: e.pageX + 30,
+                top: e.pageY + 5
+            });
+        });
     </script>
 </body>
 

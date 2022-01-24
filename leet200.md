@@ -111,7 +111,7 @@ Python 要点
     - ref：https://stackoverflow.com/a/36734643/7037749
 - ```()``` 内可以在运算符之前或者之后换行。
     - 所以，如果遇到 if 有多个条件的时候，可以用 ```if ():``` 然后括号里有多行
-    - Comprehension 以为也带着括号，所以可以在关键词处换行
+    - Comprehension 因为也带着括号，所以可以在关键词处换行
 - Python 里面的判断大小的 ```<```,```<=``` 等符号可以串联，以省略一堆 ```and```
 
 # Arcived Solution
