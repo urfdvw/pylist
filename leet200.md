@@ -72,6 +72,20 @@ class Solution:
         ] # all possible neighbors
         return out
 ```
+
+思路
+- 能把两个坐标一起处理的时候尽量一起处理，两个坐标绑在一个 tuple 里方便 set 查重。
+
+Python 要点
+- ```tuple``` comprehension 的写法是 ```tupple( ... )``` 而不是 ```()```
+    - ref: https://stackoverflow.com/a/16940351/7037749
+- double list comprehension  的顺序是 和 嵌套 for 的顺讯是一样的
+    - ref：https://stackoverflow.com/a/36734643/7037749
+- ```()``` 内可以在运算符之前或者之后换行。
+    - 所以，如果遇到 if 有多个条件的时候，可以用 ```if ():``` 然后括号里有多行
+    - Comprehension 因为也带着括号，所以可以在关键词处换行
+- Python 里面的判断大小的 ```<```,```<=``` 等符号可以串联，以省略一堆 ```and```
+
 ```steps
 1, 2
 5
@@ -99,20 +113,6 @@ class Solution:
 38
 40 
 ```
-
-
-思路
-- 能把两个坐标一起处理的时候尽量一起处理，两个坐标绑在一个 tuple 里方便 set 查重。
-
-Python 要点
-- ```tuple``` comprehension 的写法是 ```tupple( ... )``` 而不是 ```()```
-    - ref: https://stackoverflow.com/a/16940351/7037749
-- double list comprehension  的顺序是 和 嵌套 for 的顺讯是一样的
-    - ref：https://stackoverflow.com/a/36734643/7037749
-- ```()``` 内可以在运算符之前或者之后换行。
-    - 所以，如果遇到 if 有多个条件的时候，可以用 ```if ():``` 然后括号里有多行
-    - Comprehension 因为也带着括号，所以可以在关键词处换行
-- Python 里面的判断大小的 ```<```,```<=``` 等符号可以串联，以省略一堆 ```and```
 
 # Arcived Solution
 ```python
