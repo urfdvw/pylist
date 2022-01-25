@@ -102,6 +102,7 @@ while q: # 当 q 不为空
         - [297. Serialize and Deserialize Binary Tree](leet297.md)
 - On Graph
     - [178. Graph Valid Tree](lint178.md)
+        - [261. Graph Valid Tree](leet261.md)
     - [137. Clone Graph](lint137.md)
 - On Implicit Graph
     - [433. Number of Islands](lint433.md)

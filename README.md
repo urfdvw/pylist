@@ -15,6 +15,7 @@
 - [毕设卡组](note_bishe_stack.md)
 
 ## MISC
+- [Code Presentor](./presentations/)
 - [Python Cheat Sheet](note_python_cheat_sheet.md)
 - [Coding Style](note_style.md)
 - [Thoughts in Algorithms](note_highlevel.md)
