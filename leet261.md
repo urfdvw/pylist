@@ -37,11 +37,11 @@ class Solution:
             return False
         # build graph
         ## build nodes
-        graph = [set() for i in range(n)]
+        graph = [[] for i in range(n)]
         ## build edges
         for e in edges:
-            graph[e[0]].add(e[1])
-            graph[e[1]].add(e[0])
+            graph[e[0]].append(e[1])
+            graph[e[1]].append(e[0])
         # bfs to check if all connected
         q = deque([0])
         qed = set(q)
