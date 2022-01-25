@@ -119,3 +119,36 @@ class Solution:
 10
 11,12
 ```
+
+# Advanced Solution
+Use `qed` as record, no extra dixtionary
+```python
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val = 0, neighbors = None):
+        self.val = val
+        self.neighbors = neighbors if neighbors is not None else []
+"""
+class Solution:
+    def cloneGraph(self, root: 'Node') -> 'Node':
+        # corner case
+        if root is None:
+            return None
+        # clone nodes by BFS
+        q = deque([root])
+        qed = {root: Node(val=root.val)} # key: old node, val: new node
+        while q:
+            # pop
+            old_node = q.popleft()
+            # append children
+            for old_nei in old_node.neighbors:
+                if old_nei not in qed:
+                    q.append(old_nei)
+                    qed[old_nei] = Node(val=old_nei.val) # record enqueue and process
+        # clone edge
+        for old_node in qed:
+            for old_nei in old_node.neighbors:
+                qed[old_node].neighbors.append(qed[old_nei])
+        return qed[root]
+```
