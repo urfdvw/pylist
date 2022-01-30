@@ -109,7 +109,9 @@ while q: # 当 q 不为空
     - [433. Number of Islands](lint433.md)
         - [200. Number of Islands](leet200.md)
     - [611. Knight Shortest Path](lint611.md)
+    - [1197. Minimum Knight Moves](leet1197.md)
     - [120. Word Ladder](lint120.md)
+        - [127. Word Ladder](leet127.md)
 - topology sorting
     - [615. Course Schedule](lint615.md)
     - [616. Course Schedule II](lint616.md)
