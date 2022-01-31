@@ -17,6 +17,26 @@ while q: # 当 q 不为空
 
 要点
 - 节点的主逻辑紧接在 ```popleft()``` 之后
+- 对 node 的处理是紧贴 pop 之后
+
+---
+
+基本模板的变体
+
+``` python
+# Init
+## 处理 root
+q = deque([root]) # 用作 queue
+# loop
+while q: # 当 q 不为空
+    node = q.popleft() # 当前节点
+    # 遍历子节点：
+        # 对当前子节点进行操作
+        # append 到 q
+```
+
+要点
+- 对 node 的处理是紧贴 append 之前
 
 ---
 
@@ -122,12 +142,13 @@ while q: # 当 q 不为空
 - python 里面的 collections.deque() 可以用作 queue
     - enqueue: a.append()
     - dequeue: a.popleft()
-- a.append(), a.pop() 可以当作stack的接口用
+<!-- - a.append(), a.pop() 可以当作stack的接口用
 - set 的函数
     - A.add()
     - A.remove()
     - X in A
 - dict 的函数
-    - X in B  # 测试 X 是否是 B 的 key
+    - X in B  # 测试 X 是否是 B 的 key -->
 - 需要遍历的时候，优先考虑BFS。
     - 比如序列化
+- 最短路几乎全是 BFS
