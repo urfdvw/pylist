@@ -13,6 +13,7 @@
 ## Collections
 - [30-Day LeetCoding Challenge](note_30_Day_LeetCoding_Challenge.md)
 - [毕设卡组](note_bishe_stack.md)
+- [狗头卡组](note_doge_stack.md)
 
 ## MISC
 - [Code Presentor](./presentations/)
